@@ -1,200 +1,90 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta name="coinzilla" content="b6d42d0e29f0083c0385c97ee826f445" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Benyamin Batau - EduTech Otomotif SMKN 1 Sumarorong</title>
-  <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Benyamin Batau - EduTech Otomotif SMKN 1 Sumarorong</title>
-  <meta name="description" content="..."/>
-  <!-- VERIFIKASI COINZILLA: tambahkan baris ini -->
-  <meta name="coinzilla" content="b6d42d0e29f0083c0385c97ee826f445" />
-
-  <!-- style, link font, dll. di sini -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  ...
-</head>
-  <meta name="description" content="Platform edukasi otomotif, scanner busi AI, absensi GPS, ujian blockchain"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>BENYAMIN BATAU</title>
+  
   <style>
-    :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --accent: #3b82f6;
-      --gold: #fbbf24;
-      --green: #10b981;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-    }
     body {
-      margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); min-height:100vh;
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.6;
     }
+    
+    .wrapper {
+      min-height: 100dvh;
+      padding: 20px 10px;
+    }
+    
     header {
-      background: linear-gradient(135deg, #1e40af, #3b82f6);
-      padding: 4rem 1.5rem 3rem;
-      text-align:center;
+      background: #1a1a2e;
+      color: #00d4ff;
+      text-align: center;
+      padding: 20px;
+      font-size: 2rem;
+      font-weight: bold;
+      border-bottom: 4px solid #00d4ff33;
+      margin-bottom: 30px;
     }
-    h1 { font-size:2.6rem; font-weight:800; margin-bottom:0.4rem; }
-    .tagline { font-size:1.2rem; opacity:0.9; max-width:640px; margin:0 auto 1.8rem; }
-    .nav-tabs {
-      display:flex; justify-content:center; flex-wrap:wrap; gap:1rem; margin:2rem 1rem;
+    
+    .kamar {
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 1200px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
     }
-    .tab-btn {
-      padding:0.9rem 1.6rem; border-radius:999px; font-weight:600; cursor:pointer;
-      background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);
-      color:white; transition:all 0.3s;
+    
+    /* Kamar 1 - Biru gelap (default rekomendasi) */
+    .kamar-1 {
+      background: #0f3460;
+      border: 3px dashed #00d4ff;
     }
-    .tab-btn.active, .tab-btn:hover {
-      background:var(--accent); border-color:var(--accent); transform:translateY(-2px);
+    
+    /* Kamar 2 - Ungu misterius */
+    .kamar-2 {
+      background: #2c0b3f;
+      border: 3px solid #c084fc;
     }
-    .section { display:none; padding:2rem 1.5rem; max-width:1100px; margin:auto; }
-    .section.active { display:block; }
-    .feature-card {
-      background:var(--card); border-radius:16px; padding:2rem; margin:1.5rem 0;
-      border:1px solid #334155; box-shadow:0 8px 25px rgba(0,0,0,0.35);
+    
+    /* Kamar 3 - Hijau neon */
+    .kamar-3 {
+      background: #0d3b1f;
+      border: 3px dashed #39ff14;
     }
-    .btn-primary {
-      background:var(--green); color:#000; padding:1rem 2rem; border:none;
-      border-radius:12px; font-weight:700; cursor:pointer; margin-top:1.5rem;
-      display:inline-block; text-decoration:none;
+    
+    /* Kamar 4 - Merah gelap (buat yang suka vibe intens) */
+    .kamar-4 {
+      background: #3d0f0f;
+      border: 3px solid #ff4d4d;
     }
-    footer { text-align:center; padding:3rem 1rem; color:var(--muted); font-size:0.95rem; border-top:1px solid #334155; }
-    @media (max-width:640px) {
-      h1 { font-size:2.1rem; }
-      .nav-tabs { flex-direction:column; }
+    
+    .kamar h2 {
+      margin-top: 0;
+      color: inherit;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Benyamin Batau</h1>
-  <p class="tagline">Edukasi Otomotif SMK • Teknologi Interaktif • SMKN 1 Sumarorong</p>
-</header>
+<div class="wrapper">
 
-<div class="nav-tabs">
-  <div class="tab-btn active" onclick="showTab('home')">Beranda</div>
-  <div class="tab-btn" onclick="showTab('platform')">Platform Edukasi</div>
-  <div class="tab-btn" onclick="showTab('scanner')">Busi Scanner</div>
-  <div class="tab-btn" onclick="showTab('absen')">E-Absen</div>
-  <div class="tab-btn" onclick="showTab('ujian')">Ujian Online</div>
-</div>
+  <header>
+    BENYAMIN BATAU
+  </header>
 
-<!-- ==================== TAB BERANDA ==================== -->
-<div id="home" class="section active">
-  <div class="feature-card">
-    <h2 style="color:var(--gold)">Selamat Datang</h2>
-    <p>Selamat datang di portal edukasi otomotif berbasis teknologi yang dikembangkan untuk mendukung pembelajaran Teknik Sepeda Motor (TSM) di SMKN 1 Sumarorong.</p>
-    <p>Gunakan menu di atas untuk mengakses fitur:</p>
-    <ul style="line-height:1.8; margin:1.5rem 0 0 1.5rem;">
-      <li>Platform Edukasi + Kolaborasi Coinzilla</li>
-      <li>Aplikasi Scanner Warna Busi AI</li>
-      <li>Absensi Digital Guru berbasis GPS</li>
-      <li>Ujian Online + Reward Blockchain (Phantom Wallet)</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ==================== TAB PLATFORM EDUKASI ==================== -->
-<div id="platform" class="section">
-  <div class="feature-card" style="max-width: 900px; margin: 0 auto;">
-    <h2 style="color: var(--gold); text-align: center; margin-bottom: 1.5rem; font-size: 2rem;">
-      Platform Edukasi Otomotif TSM
-    </h2>
+  <!-- KAMAR 1 - Biru (paling recommended buat mulai) -->
+  <div class="kamar kamar-1">
+    <h2>Kamar 1 - Biru Gelap</h2>
+    <p>Tempat ini buat kamu tempel kode HTML lama pertama.<br>Hapus tulisan ini + placeholder di bawah, lalu paste kode lamamu.</p>
     
-    <p style="text-align: center; font-size: 1.15rem; margin-bottom: 2rem; color: var(--muted);">
-      Website ini merupakan platform pembelajaran berbasis web khusus untuk siswa <strong>Teknik Sepeda Motor (TSM)</strong> di SMK. 
-      Fokus utama pada diagnosis busi, sistem pengapian, kuis interaktif visual, dan materi praktik otomotif.
-    </p>
-
-    <!-- Badge Partner -->
-    <div style="text-align: center; margin: 1.5rem 0;">
-      <span class="badge" style="
-        background: linear-gradient(135deg, #00ffcc, #00b09b);
-        color: #003333;
-        padding: 0.6rem 1.4rem;
-        border-radius: 999px;
-        font-weight: bold;
-        font-size: 1rem;
-        box-shadow: 0 4px 12px rgba(0,255,204,0.3);
-      ">
-        Partnered Content • Coinzilla Ready
-      </span>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-      
-      <!-- Card 1: Tentang Platform -->
-      <div style="background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.3); border-radius: 12px; padding: 1.8rem;">
-        <h3 style="color: var(--accent); margin-bottom: 1rem;">Tentang Platform</h3>
-        <p style="line-height: 1.7; color: var(--text);">
-          Dikembangkan khusus untuk mendukung pembelajaran <strong>Teknik Sepeda Motor (TSM)</strong> di SMK.<br><br>
-          Fitur utama meliputi:
-        </p>
-        <ul style="list-style: none; padding-left: 0; margin: 1rem 0; line-height: 2;">
-          <li>✅ Diagnosis warna & kondisi busi secara visual</li>
-          <li>✅ Penjelasan lengkap sistem pengapian (ignition)</li>
-          <li>✅ Kuis interaktif berbasis gambar & video</li>
-          <li>✅ Materi praktik diagnosis mesin sepeda motor</li>
-          <li>✅ AI-assisted learning (scanner busi terintegrasi)</li>
-        </ul>
-      </div>
-
-      <!-- Card 2: Kolaborasi & Promosi -->
-      <div style="background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.3); border-radius: 12px; padding: 1.8rem;">
-        <h3 style="color: var(--gold); margin-bottom: 1rem;">Kolaborasi & Promosi Brand</h3>
-        <p style="line-height: 1.7;">
-          Platform ini terbuka untuk kerja sama dengan:
-        </p>
-        <ul style="list-style: none; padding-left: 0; margin: 1rem 0; line-height: 2;">
-          <li>→ Brand edukasi & pelatihan otomotif</li>
-          <li>→ Perusahaan teknologi & alat diagnostik</li>
-          <li>→ Kampanye iklan edukatif berbasis crypto</li>
-          <li>→ Jaringan periklanan <strong>Coinzilla</strong></li>
-        </ul>
-        <p style="font-size: 0.95rem; color: var(--muted); margin-top: 1.2rem;">
-          Cocok untuk brand yang ingin menjangkau siswa SMK otomotif di Indonesia.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- Media Sosial -->
-    <h3 style="color: var(--gold); text-align: center; margin: 2.5rem 0 1.5rem;">Media Sosial Resmi</h3>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; margin: 1.5rem 0;">
-      <a href="https://web.facebook.com/benyamin.batau?locale=id_ID" target="_blank" class="btn-primary" style="background: #0866ff; min-width: 140px; text-align: center;">
-        <span style="margin-right: 0.5rem;">📘</span> Facebook
-      </a>
-      <a href="https://www.youtube.com/@BENYAMINBATAU" target="_blank" class="btn-primary" style="background: #ff0000; min-width: 140px; text-align: center;">
-        <span style="margin-right: 0.5rem;">▶️</span> YouTube
-      </a>
-      <a href="https://www.tiktok.com/@benyaminbatau" target="_blank" class="btn-primary" style="background: #000; min-width: 140px; text-align: center;">
-        <span style="margin-right: 0.5rem;">🎵</span> TikTok
-      </a>
-      <a href="https://x.com/BenyaminB11K" target="_blank" class="btn-primary" style="background: #1da1f2; min-width: 140px; text-align: center;">
-        <span style="margin-right: 0.5rem;">🐦</span> X / Twitter
-      </a>
-    </div>
-
-    <!-- Call to Action -->
-    <div style="text-align: center; margin-top: 3rem;">
-      <a href="https://web.facebook.com/benyamin.batau" target="_blank" class="btn-primary" style="font-size: 1.1rem; padding: 1.2rem 2.5rem; background: var(--accent);">
-        Hubungi untuk Kolaborasi atau Sponsorship
-      </a>
-    </div>
-
-    <p style="text-align: center; color: var(--muted); margin-top: 2rem; font-size: 0.95rem;">
-      © 2026 Benyamin Batau • Educational Web Platform • Crypto Ads Ready
-    </p>
-  </div>
-</div>
-<!-- ==================== TAB SCANNER ==================== -->
-<!DOCTYPE html>
+    <!-- === TEMPAT PASTE KODE LAMA KAMU DI SINI (Kamar 1) === -->
+    <!-- Contoh placeholder – hapus mulai dari sini -->
+    <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -960,8 +850,16 @@
 </script>
 </body>
 </html></html>
-<!-- ==================== TAB E-ABSEN ==================== -->
-<!DOCTYPE html>
+    <!-- === SAMPAI SINI HAPUS/DITIMPA === -->
+  </div>
+
+  <!-- KAMAR 2 - Ungu -->
+  <div class="kamar kamar-2">
+    <h2>Kamar 2 - Ungu</h2>
+    <p>Tempat cadangan / variasi kedua.<br>Timpa di sini kalau mau tes versi lain.</p>
+    
+    <!-- === TEMPAT PASTE KODE LAMA KAMU DI SINI (Kamar 2) === -->
+    <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -1809,29 +1707,15 @@
 </script>
 </body>
 </html>
-<!-- ==================== TAB UJIAN ==================== -->
-<div id="ujian" class="section">
-  <div class="feature-card" style="padding: 1.5rem; background: #0f172a; border: 2px solid var(--gold); max-width: 700px; margin: 0 auto;">
-    <h2 style="color: var(--gold); text-align: center; margin-bottom: 1rem;">
-      Ujian Online TSM + Blockchain
-    </h2>
-    <p style="text-align: center; color: #94a3b8; margin-bottom: 2rem;">
-      Ujian pengecatan & otomotif untuk siswa XI TSM.<br>
-      <strong>Lulus = Dapat reward token $GRASS</strong> (via Phantom Wallet Solana).
-    </p>
+  </div>
 
-    <!-- Pilihan Mode Ujian -->
-    <div style="text-align: center; margin: 2rem 0;">
-      <button onclick="showUjian('simple')" style="padding: 1rem 2rem; margin: 0.5rem; background: var(--accent); color: white; border: none; border-radius: 12px; font-weight: bold; cursor: pointer;">
-        Ujian Sederhana (Tanpa Reward)
-      </button>
-      <button onclick="showUjian('blockchain')" style="padding: 1rem 2rem; margin: 0.5rem; background: var(--gold); color: #000; border: none; border-radius: 12px; font-weight: bold; cursor: pointer;">
-        Ujian Blockchain + Reward $GRASS
-      </button>
-    </div>
-
-    <!-- ==================== UJIAN SEDERHANA (tanpa blockchain) ==================== -->
-   <!DOCTYPE html>
+  <!-- KAMAR 3 - Hijau -->
+  <div class="kamar kamar-3">
+    <h2>Kamar 3 - Hijau Neon</h2>
+    <p>Buat eksperimen atau konten yang lebih "energetic".</p>
+    
+    <!-- === TEMPAT PASTE KODE LAMA KAMU DI SINI (Kamar 3) === -->
+    <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -1968,7 +1852,14 @@
 
 </body>
 </html>
-    <!-- ==================== UJIAN BLOCKCHAIN (dengan reward) ==================== -->
+  </div>
+
+  <!-- KAMAR 4 - Merah -->
+  <div class="kamar kamar-4">
+    <h2>Kamar 4 - Merah Gelap</h2>
+    <p>Buat vibe yang lebih bold/intens.</p>
+    
+    <!-- === TEMPAT PASTE KODE LAMA KAMU DI SINI (Kamar 4) === -->
     <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -2089,239 +1980,9 @@
     </script>
 </body>
 </html>
-    <!-- ==================== SCRIPT UJIAN SEDERHANA ==================== -->
-    <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UJIAN TSM - SMKN 1 SUMARORONG</title>
-    <script src="https://bundle.run/buffer@6.0.3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@1.78.3/lib/index.iife.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@solana/spl-token@0.3.8/lib/index.iife.min.js"></script>
-    <style>
-        :root { --hijau: #4ade80; --gelap: #020617; }
-        body { background: var(--gelap); color: white; font-family: sans-serif; margin: 0; padding: 20px; text-align: center; }
-        .card { background: #1e293b; border-radius: 15px; padding: 20px; border: 2px solid var(--hijau); max-width: 500px; margin: auto; text-align: left; }
-        .header { text-align: center; margin-bottom: 20px; border-bottom: 2px solid #334155; padding-bottom: 10px; }
-        .soal { background: #0f172a; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid var(--hijau); display: none; }
-        .active { display: block; }
-        button { width: 100%; padding: 15px; background: var(--hijau); color: var(--gelap); font-weight: bold; border: none; border-radius: 10px; cursor: pointer; font-size: 16px; margin-top: 10px; }
-        input[type="text"] { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid var(--hijau); background: var(--gelap); color: white; box-sizing: border-box; }
-        #status { margin-top: 20px; color: #fbbf24; font-size: 14px; font-weight: bold; }
-    </style>
-</head>
-<body>
+  </div>
 
-    <div class="card">
-        <div class="header">
-            <h2 style="margin:0;">🏍️ KUIS PENGECATAN</h2>
-            <p style="font-size:12px; color: #94a3b8;">XI TSM - GURU: BENYAMIN BATAU<br>03 Februari 2026</p>
-        </div>
-
-        <div id="setup-area">
-            <label>Alamat Wallet Phantom Siswa:</label>
-            <input type="text" id="wallet_siswa" placeholder="Paste alamat Phantom Anda">
-            <button onclick="mulaiKuis()">MULAI UJIAN ONLINE</button>
-        </div>
-
-        <div id="quiz-area" style="display:none;">
-            <div id="q1" class="soal active">
-                <p><b>Soal 1:</b> Thinner apa yang paling bagus untuk hasil kilap (Gloss) pada motor Supra?</p>
-                <input type="radio" name="j1" value="0"> A. Thinner B biasa<br>
-                <input type="radio" name="j1" value="1"> B. Thinner ND<br>
-                <input type="radio" name="j1" value="100"> C. Thinner PU (Poliurethane)
-            </div>
-
-            <div id="q2" class="soal">
-                <p><b>Soal 2:</b> Apa akibat menggunakan amplas terlalu kasar (No. 100) pada tahap akhir?</p>
-                <input type="radio" name="j2" value="100"> A. Cat baret & tidak rata<br>
-                <input type="radio" name="j2" value="0"> B. Cat lebih mengkilap<br>
-                <input type="radio" name="j2" value="0"> C. Cat cepat kering
-            </div>
-
-            <button id="btn-next" onclick="nextSoal()">SOAL SELANJUTNYA</button>
-        </div>
-
-        <div id="status"></div>
-    </div>
-
-    <script>
-        window.Buffer = buffer.Buffer;
-        // PRIVATE KEY GURU (Disembunyikan di backend jika memungkinkan, tapi untuk tes ini kita pakai SK Bapak)
-        const SK_GURU = new Uint8Array([189,246,239,121,175,101,83,254,203,183,233,10,31,202,81,129,206,35,114,157,172,81,204,163,107,224,144,110,139,36,241,212,75,233,152,229,66,90,190,59,10,121,126,186,156,225,130,200,152,110,36,175,242,163,157,154,188,155,166,221,19,50,35,254]);
-        
-        let currentSoal = 1;
-        let totalSkor = 0;
-
-        function mulaiKuis() {
-            if(!document.getElementById('wallet_siswa').value) return alert("Isi wallet dulu!");
-            document.getElementById('setup-area').style.display = 'none';
-            document.getElementById('quiz-area').style.display = 'block';
-        }
-
-        function nextSoal() {
-            const rbg = document.querySelector(`input[name="j${currentSoal}"]:checked`);
-            if(!rbg) return alert("Pilih jawaban dulu!");
-            
-            totalSkor += parseInt(rbg.value);
-            document.getElementById(`q${currentSoal}`).classList.remove('active');
-            currentSoal++;
-
-            if(currentSoal <= 2) { // Ganti ke 20 jika soal sudah lengkap
-                document.getElementById(`q${currentSoal}`).classList.add('active');
-            } else {
-                prosesKlaim();
-            }
-        }
-
-        async function prosesKlaim() {
-            const log = document.getElementById('status');
-            const targetSiswa = document.getElementById('wallet_siswa').value.trim();
-            log.innerHTML = "⏳ Mengirim Skor ke Blockchain...";
-
-            if(totalSkor < 100) { // Sesuai logika KKM
-                log.style.color = "red";
-                log.innerHTML = `❌ Skor: ${totalSkor}. Anda Tidak Lulus. Hadiah Hangus.`;
-                return;
-            }
-
-            try {
-                const solana = window.solanaWeb3;
-                const spl = window.splToken;
-                const koneksi = new solana.Connection(solana.clusterApiUrl("devnet"), "confirmed");
-                const bapak = solana.Keypair.fromSecretKey(SK_GURU);
-                
-                const mintGrass = new solana.PublicKey("CyDAzrwQW161KZYV2nP4stwiJK2FN8YW3bxNHPuRnsSv");
-                const brankasBapak = new solana.PublicKey("F8BAKuL1twAMoN4Kx35RJ2aDK7hE4MDQTZ2t9LRTcfGG");
-                const siswaOwner = new solana.PublicKey(targetSiswa);
-
-                // Auto-create account siswa di Phantom
-                const akunSiswa = await spl.getOrCreateAssociatedTokenAccount(koneksi, bapak, mintGrass, siswaOwner);
-
-                const tx = await spl.transfer(koneksi, bapak, brankasBapak, akunSiswa.address, bapak.publicKey, 100);
-
-                log.style.color = "#4ade80";
-                log.innerHTML = `✅ LULUS! 100 $GRASS sudah dikirim ke Phantom Anda.<br>ID: ${tx.substring(0,10)}...`;
-            } catch (err) {
-                log.innerHTML = "❌ Error: " + err.message;
-            }
-        }
-    </script>
-</body>
-</html>
-    <!-- ==================== SCRIPT UJIAN BLOCKCHAIN ==================== -->
-    <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UJIAN PENGECAHAN SUPRA - XI TSM</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
-        .container { max-width: 600px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin: auto; }
-        h2 { color: #d32f2f; text-align: center; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
-        .info-guru { font-size: 14px; color: #555; text-align: center; margin-bottom: 20px; }
-        .soal-box { margin-bottom: 20px; padding: 15px; border: 1px solid #eee; border-radius: 5px; }
-        .soal-box p { font-weight: bold; margin-top: 0; }
-        input[type="text"] { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
-        button { width: 100%; padding: 15px; background: #d32f2f; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; }
-        button:hover { background: #b71c1c; }
-        #hasil { display: none; text-align: center; margin-top: 20px; padding: 20px; background: #e8f5e9; border-radius: 10px; }
-    </style>
-</head>
-<body>
-
-<div class="container" id="kuis-box">
-    <h2>🏍️ UJIAN PRAKTIK PENGECATAN SUPRA</h2>
-    <div class="info-guru">
-        GURU: <b>BENYAMIN BATAU, S.Pd.</b><br>
-        SELASA, 03 FEBRUARI 2026 | KELAS XI TSM
-    </div>
-
-    <label>Nama Lengkap Siswa:</label>
-    <input type="text" id="nama_siswa" placeholder="Ketik nama Anda di sini...">
-
-    <div id="daftar-soal">
-        <div class="soal-box">
-            <p>1. Untuk pengecatan body motor Supra yang berbahan plastik, apa jenis cat dasar yang wajib digunakan agar cat tidak mengelupas?</p>
-            <input type="radio" name="q1" value="0"> Epoxy Primer<br>
-            <input type="radio" name="q1" value="5"> Plastic Primer / PP Plastic<br>
-            <input type="radio" name="q1" value="0"> Surfacer Biasa
-        </div>
-
-        <div class="soal-box">
-            <p>2. Apa perbedaan utama antara Thinner ND dengan Thinner PU?</p>
-            <input type="radio" name="q2" value="0"> Harganya sama saja<br>
-            <input type="radio" name="q2" value="5"> Thinner PU lebih lambat kering dan hasil lebih mengkilap<br>
-            <input type="radio" name="q2" value="0"> Thinner ND khusus untuk cat mahal
-        </div>
-
-        <div class="soal-box">
-            <p>3. Jika hasil pengecatan terlihat kasar seperti "kulit jeruk", apa penyebab teknisnya?</p>
-            <input type="radio" name="q3" value="5"> Tekanan angin kompresor terlalu rendah atau cat terlalu kental<br>
-            <input type="radio" name="q3" value="0"> Jarak spray gun terlalu jauh<br>
-            <input type="radio" name="q3" value="0"> Ruangan terlalu dingin
-        </div>
-
-        <div class="soal-box">
-            <p>4. Apa akibat jika kita menggunakan amplas nomor 100 pada tahap akhir (finishing) sebelum cat inti?</p>
-            <input type="radio" name="q4" value="0"> Hasil cat akan sangat halus<br>
-            <input type="radio" name="q4" value="5"> Muncul baret-baret dalam yang akan terlihat setelah dicat<br>
-            <input type="radio" name="q4" value="0"> Cat jadi cepat kering
-        </div>
-
-        <div class="soal-box">
-            <p>5. Kenapa hasil pengecatan bisa terlihat "halus" dan rata?</p>
-            <input type="radio" name="q5" value="5"> Karena pengamplasan air (wet sanding) dilakukan secara bertahap dan benar<br>
-            <input type="radio" name="q5" value="0"> Karena cat disemprot sangat tebal langsung sekali jalan<br>
-            <input type="radio" name="q5" value="0"> Karena tidak menggunakan thinner
-        </div>
-
-        <p style="text-align:center; color:#777;">... (Soal berlanjut sampai 20) ...</p>
-    </div>
-
-    <button onclick="hitungNilai()">SELESAI & CEK NILAI</button>
 </div>
-
-<div id="hasil" class="container">
-    <h2 id="teks-hasil">HASIL UJIAN</h2>
-    <p id="nama-display"></p>
-    <h1 id="skor-display" style="font-size: 60px; margin: 10px 0;">0</h1>
-    <p id="keterangan"></p>
-    <button onclick="location.reload()">ULANGI UJIAN</button>
-</div>
-
-<script>
-    function hitungNilai() {
-        const nama = document.getElementById('nama_siswa').value;
-        if(!nama) { alert("Nama harus diisi!"); return; }
-
-        let total = 0;
-        // Logika hitung skor (Contoh untuk 5 soal dulu, Bapak bisa tambah q6 sampai q20)
-        for(let i=1; i<=5; i++) {
-            let jawaban = document.querySelector(`input[name="q${i}"]:checked`);
-            if(jawaban) {
-                total += parseInt(jawaban.value);
-            }
-        }
-
-        // Tampilkan Hasil
-        document.getElementById('kuis-box').style.display = 'none';
-        document.getElementById('hasil').style.display = 'block';
-        document.getElementById('nama-display').innerText = "Nama Siswa: " + nama;
-        document.getElementById('skor-display').innerText = total;
-
-        const ket = document.getElementById('keterangan');
-        if(total >= 75) {
-            ket.innerText = "SELAMAT! ANDA LULUS DAN KOMPETEN.";
-            ket.style.color = "green";
-        } else {
-            ket.innerText = "MAAF, ANDA HARUS BELAJAR LAGI (REMEDI).";
-            ket.style.color = "red";
-        }
-    }
-</script>
 
 </body>
 </html>
