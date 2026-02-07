@@ -579,17 +579,587 @@
           <h2>Scanner Diagnosis Busi AI</h2>
         </div>
         <div class="kamar-body">
-          <p style="text-align: center; padding: 40px; font-size: 1.1rem; line-height: 1.8;">
-            <strong style="color: #c084fc; font-size: 1.3rem;">🔍 Ultra Precision Scanner v2.0</strong><br><br>
-            Aplikasi diagnosis busi menggunakan teknologi Computer Vision dan AI.<br>
-            Deteksi kondisi busi berdasarkan 120+ database warna dengan akurasi tinggi.<br><br>
-            <span style="color: #94a3b8; font-size: 0.9rem;">
-              ✓ Real-time camera analysis<br>
-              ✓ Multi-point color sampling<br>
-              ✓ Detailed diagnostic report<br>
-              ✓ Professional recommendations
-            </span>
-          </p>
+          <!-- Scanner Busi AI Content -->
+          <iframe 
+            srcdoc='<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BENYAMIN BATAU APP - Ultra Precision Scanner v2.0</title>
+    <style>
+        :root { 
+            --bg: #020617; 
+            --gold: #fbbf24; 
+            --text: #f8fafc; 
+            --accent: #3b82f6; 
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+        body { 
+            font-family: "Segoe UI", Roboto, sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            margin: 0; 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .app-header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 18px; 
+            text-align: center; 
+            border-bottom: 3px solid var(--gold);
+            box-shadow: 0 4px 20px rgba(251, 191, 36, 0.15);
+        }
+        .app-header h1 { 
+            margin: 0; 
+            font-size: 1.3rem; 
+            letter-spacing: 3px; 
+            color: var(--gold); 
+            font-weight: 900;
+            text-shadow: 0 2px 10px rgba(251, 191, 36, 0.3);
+        }
+        .app-header p { 
+            margin: 4px 0 0; 
+            font-size: 0.65rem; 
+            opacity: 0.8; 
+            letter-spacing: 1.5px;
+        }
+        .version { 
+            font-size: 0.55rem; 
+            color: var(--accent); 
+            margin-top: 2px;
+        }
+
+        #viewport { 
+            position: relative; 
+            width: 100vw; 
+            height: 55vh; 
+            background: #000; 
+            border-bottom: 2px solid #334155;
+            overflow: hidden;
+        }
+        #video { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+            filter: contrast(1.1) brightness(1.05);
+        }
+        
+        .overlay { 
+            position: absolute; 
+            inset: 0; 
+            pointer-events: none; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+        }
+        
+        .target-box { 
+            width: 90px; 
+            height: 90px; 
+            border: 3px solid var(--gold); 
+            background: rgba(251, 191, 36, 0.03);
+            position: relative;
+            box-shadow: 0 0 0 5000px rgba(0,0,0,0.65),
+                        0 0 30px rgba(251, 191, 36, 0.4) inset;
+            border-radius: 4px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.02); opacity: 0.9; }
+        }
+        
+        .crosshair {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .crosshair::before,
+        .crosshair::after {
+            content: "";
+            position: absolute;
+            background: var(--gold);
+        }
+        .crosshair::before {
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            transform: translateX(-50%);
+        }
+        .crosshair::after {
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            transform: translateY(-50%);
+        }
+        
+        .target-box::after {
+            content: "BIDIK AREA INSULATOR";
+            position: absolute; 
+            bottom: -28px; 
+            left: 50%; 
+            transform: translateX(-50%);
+            font-size: 9px; 
+            color: var(--gold); 
+            font-weight: bold; 
+            white-space: nowrap;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        }
+        
+        .corner {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 2px solid var(--gold);
+        }
+        .corner.tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+        .corner.tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
+        .corner.bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
+        .corner.br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+        .scan-info {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            background: rgba(15, 23, 42, 0.9);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            font-size: 0.7rem;
+            backdrop-filter: blur(10px);
+        }
+        .scan-info div {
+            display: flex;
+            justify-content: space-between;
+            margin: 3px 0;
+        }
+        .scan-info .label { color: var(--gold); font-weight: 600; }
+        .scan-info .value { color: #94a3b8; font-family: monospace; }
+
+        .ui-panel { padding: 15px; box-sizing: border-box; }
+        
+        .btn {
+            background: linear-gradient(135deg, var(--gold) 0%, #f59e0b 100%);
+            color: #000; 
+            border: none; 
+            padding: 18px;
+            width: 100%; 
+            border-radius: 14px; 
+            font-weight: 900; 
+            font-size: 1.05rem; 
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn:active {
+            transform: scale(0.98);
+            box-shadow: 0 3px 10px rgba(251, 191, 36, 0.4);
+        }
+        
+        #result { 
+            display: none; 
+            margin-top: 8px; 
+            padding-bottom: 40px;
+            animation: slideUp 0.4s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .res-header { 
+            display: flex; 
+            gap: 15px; 
+            margin-bottom: 15px; 
+            align-items: center; 
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 18px; 
+            border-radius: 18px; 
+            border: 1px solid #334155;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .color-preview { 
+            width: 75px; 
+            height: 75px; 
+            border-radius: 16px; 
+            border: 3px solid #fff; 
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            position: relative;
+        }
+        
+        .confidence-bar {
+            margin-top: 8px;
+            height: 6px;
+            background: #1e293b;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--success), var(--accent));
+            border-radius: 3px;
+            transition: width 0.6s ease-out;
+        }
+        
+        .diag-card { 
+            background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+            padding: 16px; 
+            border-radius: 14px; 
+            margin-bottom: 12px; 
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .diag-card label { 
+            font-size: 0.72rem; 
+            color: var(--gold); 
+            font-weight: 800; 
+            display: block; 
+            margin-bottom: 8px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .diag-card p { 
+            margin: 0; 
+            font-size: 0.88rem; 
+            line-height: 1.6; 
+            color: #f1f5f9;
+        }
+        
+        .severity-indicator {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+        .severity-normal { background: rgba(16, 185, 129, 0.2); color: var(--success); }
+        .severity-warning { background: rgba(251, 191, 36, 0.2); color: var(--gold); }
+        .severity-danger { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+        
+        .fix-card { 
+            border-left-color: var(--success); 
+            background: linear-gradient(135deg, rgba(6, 78, 59, 0.15) 0%, rgba(6, 78, 59, 0.05) 100%);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .stat-box {
+            background: #1e293b;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-box .stat-label {
+            font-size: 0.65rem;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+        .stat-box .stat-value {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: monospace;
+        }
+        
+        canvas { display: none; }
+        
+        .loading {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+        }
+        .loading.active { display: flex; }
+        .spinner {
+            border: 4px solid #334155;
+            border-top: 4px solid var(--gold);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loading-text {
+            margin-top: 15px;
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="loading" id="loading">
+    <div class="spinner"></div>
+    <div class="loading-text">MENGANALISIS WARNA...</div>
+</div>
+
+<div class="app-header">
+    <h1>BENYAMIN BATAU APP</h1>
+    <p>PRECISION SPARK PLUG DIAGNOSTIC SENSOR</p>
+    <p class="version">v2.0 PRO • SMKN 1 SUMARORONG • ENHANCED ALGORITHM</p>
+</div>
+
+<div id="viewport">
+    <video id="video" autoplay playsinline></video>
+    <div class="scan-info" id="scanInfo">
+        <div><span class="label">STATUS:</span> <span class="value" id="status">READY</span></div>
+        <div><span class="label">LIGHTING:</span> <span class="value" id="lighting">---</span></div>
+        <div><span class="label">SAMPLES:</span> <span class="value" id="samples">0</span></div>
+    </div>
+    <div class="overlay">
+        <div class="target-box">
+            <div class="crosshair"></div>
+            <div class="corner tl"></div>
+            <div class="corner tr"></div>
+            <div class="corner bl"></div>
+            <div class="corner br"></div>
+        </div>
+    </div>
+</div>
+
+<div class="ui-panel">
+    <button id="snap" class="btn">📸 AMBIL DATA & ANALISIS WARNA</button>
+
+    <div id="result">
+        <div class="res-header">
+            <div id="resCol" class="color-preview"></div>
+            <div style="flex: 1;">
+                <h3 id="resName" style="margin:0; color:var(--gold); font-size: 1.15rem; text-transform: uppercase;">-</h3>
+                <small id="resHex" style="opacity:0.7; font-family: monospace; font-size: 0.72rem; display: block; margin-top: 4px;"></small>
+                <div class="confidence-bar">
+                    <div class="confidence-fill" id="confidence"></div>
+                </div>
+                <small id="confText" style="font-size: 0.65rem; color: #94a3b8; margin-top: 4px; display: block;"></small>
+            </div>
+        </div>
+
+        <div class="diag-card">
+            <label>📊 Diagnosa Kondisi <span class="severity-indicator" id="severity">---</span></label>
+            <p id="resInd">-</p>
+        </div>
+        
+        <div class="diag-card">
+            <label>🔍 Analisis Penyebab</label>
+            <p id="resPen">-</p>
+        </div>
+        
+        <div class="diag-card fix-card">
+            <label>🔧 Tindakan Perbaikan</label>
+            <p id="resSol">-</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-label">BRIGHTNESS</div>
+                <div class="stat-value" id="brightness">---</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">SATURATION</div>
+                <div class="stat-value" id="saturation">---</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">HUE ANGLE</div>
+                <div class="stat-value" id="hue">---</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">MATCH SCORE</div>
+                <div class="stat-value" id="matchScore">---</div>
+            </div>
+        </div>
+        
+        <button class="btn" style="background: linear-gradient(135deg, #334155 0%, #1e293b 100%); color:white; margin-top:15px;" onclick="resetScan()">🔄 SCAN ULANG</button>
+    </div>
+</div>
+
+<canvas id="canvas"></canvas>
+
+<script>
+    const LIBRARY = [
+        { name: "Normal Perfect", rgb: [180, 145, 115], severity: "normal", ind: "Coklat muda ideal. Pembakaran sempurna, efisiensi maksimal.", pen: "AFR optimal 14.7:1, suhu kerja 400-850°C, timing pengapian presisi.", sol: "Kondisi terbaik. Pertahankan perawatan rutin setiap 5.000 km." },
+        { name: "Carbon Light", rgb: [70, 70, 70], severity: "warning", ind: "Hitam tipis. Awal fouling, campuran mulai rich.", pen: "AFR sekitar 13:1-13.5:1, sedikit boros bensin 5-10%.", sol: "Cek filter udara kotor. Ganti jika hitam/berminyak." },
+        { name: "Oil Wet Light", rgb: [25, 25, 25], severity: "danger", ind: "Hitam basah ringan. Oli mulai masuk combustion chamber.", pen: "Seal katup (valve seal) mulai keras/retak.", sol: "Ganti valve seal sebelum makin parah." },
+        { name: "Lean White", rgb: [225, 225, 225], severity: "warning", ind: "Putih bersih. Campuran terlalu irit/lean.", pen: "AFR >15.5:1, bensin kurang, udara berlebih.", sol: "Cek fuel pressure (harus 2.8-3.2 bar). Ganti fuel filter." }
+    ];
+
+    const video = document.getElementById("video");
+    const canvas = document.getElementById("canvas");
+    const snapBtn = document.getElementById("snap");
+    const resDiv = document.getElementById("result");
+    const loading = document.getElementById("loading");
+
+    let frameCount = 0;
+
+    async function startCamera() {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ 
+                video: { facingMode: "environment" } 
+            });
+            video.srcObject = stream;
+            document.getElementById("status").innerText = "ACTIVE";
+            monitorLighting();
+        } catch (e) { 
+            alert("Izin kamera diperlukan!");
+            document.getElementById("status").innerText = "ERROR";
+        }
+    }
+
+    function monitorLighting() {
+        setInterval(() => {
+            const ctx = canvas.getContext("2d");
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            ctx.drawImage(video, 0, 0);
+            
+            const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+            let brightness = 0;
+            for(let i = 0; i < imgData.length; i += 4) {
+                brightness += (imgData[i] + imgData[i+1] + imgData[i+2]) / 3;
+            }
+            brightness = (brightness / (imgData.length / 4)).toFixed(0);
+            
+            let lightStatus = brightness < 60 ? "TOO DARK ⚠️" : 
+                             brightness > 200 ? "TOO BRIGHT ⚠️" : 
+                             "OPTIMAL ✓";
+            document.getElementById("lighting").innerText = lightStatus;
+            
+            frameCount++;
+            document.getElementById("samples").innerText = frameCount;
+        }, 1000);
+    }
+
+    snapBtn.onclick = () => {
+        loading.classList.add("active");
+        
+        setTimeout(() => {
+            const ctx = canvas.getContext("2d");
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            ctx.drawImage(video, 0, 0);
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const sampleSize = 60;
+            
+            const imgData = ctx.getImageData(centerX - sampleSize/2, centerY - sampleSize/2, sampleSize, sampleSize).data;
+            
+            let r = 0, g = 0, b = 0, count = 0;
+            for(let i = 0; i < imgData.length; i += 4) {
+                r += imgData[i];
+                g += imgData[i+1];
+                b += imgData[i+2];
+                count++;
+            }
+            
+            r = Math.round(r / count);
+            g = Math.round(g / count);
+            b = Math.round(b / count);
+
+            analyzeColor(r, g, b);
+        }, 800);
+    };
+
+    function analyzeColor(r, g, b) {
+        let match = LIBRARY[0];
+        let minDist = Infinity;
+
+        LIBRARY.forEach(item => {
+            const dist = Math.sqrt(
+                Math.pow(r - item.rgb[0], 2) +
+                Math.pow(g - item.rgb[1], 2) +
+                Math.pow(b - item.rgb[2], 2)
+            );
+            
+            if(dist < minDist) { 
+                minDist = dist; 
+                match = item; 
+            }
+        });
+
+        const confidence = Math.max(0, (1 - minDist / 441) * 100);
+        const brightness = (0.2126*r + 0.7152*g + 0.0722*b).toFixed(0);
+        const max = Math.max(r, g, b);
+        const min = Math.min(r, g, b);
+        const saturation = max === 0 ? 0 : ((max - min) / max * 100).toFixed(0);
+        
+        let hue = 0;
+        if (max !== min) {
+            if (max === r) hue = 60 * ((g - b) / (max - min));
+            else if (max === g) hue = 60 * (2 + (b - r) / (max - min));
+            else hue = 60 * (4 + (r - g) / (max - min));
+        }
+        if (hue < 0) hue += 360;
+
+        const hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+        
+        document.getElementById("resCol").style.backgroundColor = hex;
+        document.getElementById("resHex").innerText = hex + " • RGB(" + r + ", " + g + ", " + b + ")";
+        document.getElementById("resName").innerText = match.name;
+        document.getElementById("resInd").innerText = match.ind;
+        document.getElementById("resPen").innerText = match.pen;
+        document.getElementById("resSol").innerText = match.sol;
+        
+        document.getElementById("confidence").style.width = confidence + "%";
+        document.getElementById("confText").innerText = "Confidence: " + confidence.toFixed(1) + "%";
+        
+        const severityEl = document.getElementById("severity");
+        severityEl.innerText = match.severity.toUpperCase();
+        severityEl.className = "severity-indicator severity-" + match.severity;
+        
+        document.getElementById("brightness").innerText = brightness;
+        document.getElementById("saturation").innerText = saturation + "%";
+        document.getElementById("hue").innerText = hue.toFixed(0) + "°";
+        document.getElementById("matchScore").innerText = (100 - minDist).toFixed(1);
+
+        loading.classList.remove("active");
+        resDiv.style.display = "block";
+        snapBtn.style.display = "none";
+        document.getElementById("scanInfo").style.display = "none";
+        video.pause();
+    }
+
+    function resetScan() {
+        resDiv.style.display = "none";
+        snapBtn.style.display = "block";
+        document.getElementById("scanInfo").style.display = "block";
+        video.play();
+    }
+
+    window.onload = startCamera;
+</script>
+</body>
+</html>'
+            width="100%" 
+            height="900px" 
+            frameborder="0"
+            style="border-radius: 15px; background: #020617;">
+          </iframe>
         </div>
       </div>
     </div>
@@ -651,33 +1221,206 @@
           <h2>Kuis Blockchain Rewards</h2>
         </div>
         <div class="kamar-body">
-          <div style="text-align: center; padding: 40px;">
-            <h3 style="color: #ff4d4d; margin-bottom: 20px; font-size: 1.5rem;">
-              🏆 Ujian Online dengan Hadiah Crypto
-            </h3>
-            
-            <p style="line-height: 1.8; margin-bottom: 25px; color: #e0e0e0;">
-              Sistem ujian interaktif terintegrasi dengan Solana blockchain.<br>
-              Siswa yang lulus mendapat reward $GRASS token langsung ke wallet Phantom.
-            </p>
-            
-            <div style="background: rgba(255, 77, 77, 0.1); padding: 25px; border-radius: 15px; border: 2px solid #ff4d4d; margin-top: 30px;">
-              <h4 style="color: #ff4d4d; margin-bottom: 15px;">⚡ Fitur Unggulan</h4>
-              <div style="text-align: left; max-width: 500px; margin: 0 auto; color: #94a3b8; line-height: 2;">
-                ✓ Auto-transfer ke Phantom wallet<br>
-                ✓ Smart contract validation<br>
-                ✓ Real-time score calculation<br>
-                ✓ Blockchain-verified certificates<br>
-                ✓ KKM-based reward system
-              </div>
+          <!-- Kuis Blockchain Content -->
+          <iframe 
+            srcdoc='<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UJIAN TSM - SMKN 1 SUMARORONG</title>
+    <script src="https://bundle.run/buffer@6.0.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@1.78.3/lib/index.iife.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/spl-token@0.3.8/lib/index.iife.min.js"></script>
+    <style>
+        :root { --hijau: #4ade80; --gelap: #020617; }
+        body { background: var(--gelap); color: white; font-family: sans-serif; margin: 0; padding: 20px; text-align: center; }
+        .card { background: #1e293b; border-radius: 15px; padding: 20px; border: 2px solid var(--hijau); max-width: 500px; margin: auto; text-align: left; }
+        .header { text-align: center; margin-bottom: 20px; border-bottom: 2px solid #334155; padding-bottom: 10px; }
+        .soal { background: #0f172a; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid var(--hijau); display: none; }
+        .active { display: block; }
+        button { width: 100%; padding: 15px; background: var(--hijau); color: var(--gelap); font-weight: bold; border: none; border-radius: 10px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+        button:hover { background: #22c55e; transform: translateY(-2px); transition: all 0.3s; }
+        input[type="text"] { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid var(--hijau); background: var(--gelap); color: white; box-sizing: border-box; }
+        input[type="radio"] { margin-right: 8px; }
+        label { display: block; padding: 10px; margin: 5px 0; background: #0f172a; border-radius: 8px; cursor: pointer; transition: all 0.3s; }
+        label:hover { background: #1e293b; }
+        #status { margin-top: 20px; color: #fbbf24; font-size: 14px; font-weight: bold; padding: 15px; background: #0f172a; border-radius: 10px; }
+        .progress { height: 8px; background: #0f172a; border-radius: 10px; margin: 15px 0; overflow: hidden; }
+        .progress-bar { height: 100%; background: var(--hijau); transition: width 0.3s; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="header">
+            <h2 style="margin:0;">🏍️ KUIS PENGECATAN OTOMOTIF</h2>
+            <p style="font-size:12px; color: #94a3b8;">XI TSM - GURU: BENYAMIN BATAU<br>03 Februari 2026</p>
+        </div>
+
+        <div id="setup-area">
+            <label style="font-size: 14px; margin-bottom: 10px;">📍 Alamat Wallet Phantom Siswa:</label>
+            <input type="text" id="wallet_siswa" placeholder="Paste alamat Phantom wallet Anda">
+            <button onclick="mulaiKuis()">🚀 MULAI UJIAN ONLINE</button>
+        </div>
+
+        <div id="quiz-area" style="display:none;">
+            <div class="progress">
+                <div class="progress-bar" id="progress" style="width: 0%"></div>
             </div>
             
-            <div style="margin-top: 30px; padding: 20px; background: rgba(251, 191, 36, 0.1); border-radius: 12px; border: 1px solid #fbbf24;">
-              <p style="color: #fbbf24; font-size: 0.9rem;">
-                <strong>⚠️ Info:</strong> Minimal skor 100 untuk klaim reward 100 $GRASS
-              </p>
+            <div id="q1" class="soal active">
+                <p><b>Soal 1:</b> Thinner apa yang paling bagus untuk hasil kilap (Gloss) pada motor Supra?</p>
+                <label><input type="radio" name="j1" value="0"> A. Thinner B biasa</label>
+                <label><input type="radio" name="j1" value="1"> B. Thinner ND</label>
+                <label><input type="radio" name="j1" value="100"> C. Thinner PU (Poliurethane)</label>
             </div>
-          </div>
+
+            <div id="q2" class="soal">
+                <p><b>Soal 2:</b> Apa akibat menggunakan amplas terlalu kasar (No. 100) pada tahap akhir?</p>
+                <label><input type="radio" name="j2" value="100"> A. Cat baret & tidak rata</label>
+                <label><input type="radio" name="j2" value="0"> B. Cat lebih mengkilap</label>
+                <label><input type="radio" name="j2" value="0"> C. Cat cepat kering</label>
+            </div>
+
+            <div id="q3" class="soal">
+                <p><b>Soal 3:</b> Berapa lapis minimal cat dasar (primer) yang ideal?</p>
+                <label><input type="radio" name="j3" value="0"> A. 1 lapis</label>
+                <label><input type="radio" name="j3" value="100"> B. 2-3 lapis</label>
+                <label><input type="radio" name="j3" value="0"> C. 5 lapis</label>
+            </div>
+
+            <div id="q4" class="soal">
+                <p><b>Soal 4:</b> Apa fungsi utama clear coat dalam sistem pengecatan?</p>
+                <label><input type="radio" name="j4" value="0"> A. Membuat warna lebih terang</label>
+                <label><input type="radio" name="j4" value="100"> B. Melindungi base coat dan memberikan kilap</label>
+                <label><input type="radio" name="j4" value="0"> C. Menggantikan primer</label>
+            </div>
+
+            <div id="q5" class="soal">
+                <p><b>Soal 5:</b> Suhu ideal untuk pengecatan motor adalah?</p>
+                <label><input type="radio" name="j5" value="100"> A. 20-30°C dengan kelembaban rendah</label>
+                <label><input type="radio" name="j5" value="0"> B. 40-50°C</label>
+                <label><input type="radio" name="j5" value="0"> C. 0-10°C</label>
+            </div>
+
+            <button id="btn-next" onclick="nextSoal()">▶️ SOAL SELANJUTNYA</button>
+        </div>
+
+        <div id="status"></div>
+    </div>
+
+    <script>
+        window.Buffer = buffer.Buffer;
+        const SK_GURU = new Uint8Array([189,246,239,121,175,101,83,254,203,183,233,10,31,202,81,129,206,35,114,157,172,81,204,163,107,224,144,110,139,36,241,212,75,233,152,229,66,90,190,59,10,121,126,186,156,225,130,200,152,110,36,175,242,163,157,154,188,155,166,221,19,50,35,254]);
+        
+        let currentSoal = 1;
+        let totalSkor = 0;
+        const totalSoalCount = 5;
+
+        function mulaiKuis() {
+            const wallet = document.getElementById("wallet_siswa").value.trim();
+            if(!wallet) return alert("⚠️ Isi alamat wallet dulu!");
+            if(wallet.length < 32) return alert("⚠️ Alamat wallet tidak valid!");
+            
+            document.getElementById("setup-area").style.display = "none";
+            document.getElementById("quiz-area").style.display = "block";
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const progress = ((currentSoal - 1) / totalSoalCount) * 100;
+            document.getElementById("progress").style.width = progress + "%";
+        }
+
+        function nextSoal() {
+            const rbg = document.querySelector("input[name=\"j" + currentSoal + "\"]:checked");
+            if(!rbg) return alert("⚠️ Pilih jawaban dulu!");
+            
+            totalSkor += parseInt(rbg.value);
+            document.getElementById("q" + currentSoal).classList.remove("active");
+            currentSoal++;
+
+            if(currentSoal <= totalSoalCount) {
+                document.getElementById("q" + currentSoal).classList.add("active");
+                updateProgress();
+                
+                if(currentSoal === totalSoalCount) {
+                    document.getElementById("btn-next").innerHTML = "✅ SELESAI & KLAIM REWARD";
+                }
+            } else {
+                prosesKlaim();
+            }
+        }
+
+        async function prosesKlaim() {
+            const log = document.getElementById("status");
+            const targetSiswa = document.getElementById("wallet_siswa").value.trim();
+            document.getElementById("quiz-area").style.display = "none";
+            document.getElementById("progress").style.width = "100%";
+            
+            log.innerHTML = "⏳ Menghitung skor dan memverifikasi blockchain...";
+            log.style.color = "#fbbf24";
+
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            const maxSkor = totalSoalCount * 100;
+            const percentage = (totalSkor / maxSkor * 100).toFixed(1);
+
+            if(totalSkor < (totalSoalCount * 100)) {
+                log.style.color = "#ef4444";
+                log.innerHTML = "❌ <strong>TIDAK LULUS</strong><br><br>" +
+                                "Skor Anda: " + totalSkor + "/" + maxSkor + " (" + percentage + "%)<br>" +
+                                "Skor Minimal: " + maxSkor + " (100%)<br><br>" +
+                                "Hadiah crypto tidak dapat diklaim.<br>" +
+                                "Silakan ulangi kuis.";
+                
+                setTimeout(() => {
+                    if(confirm("Coba lagi?")) location.reload();
+                }, 3000);
+                return;
+            }
+
+            log.innerHTML = "✅ <strong>SELAMAT! ANDA LULUS</strong><br><br>" +
+                           "Skor: " + totalSkor + "/" + maxSkor + " (100%)<br>" +
+                           "Status: SEMPURNA<br><br>" +
+                           "⏳ Memproses transfer 100 $GRASS ke wallet Anda...";
+
+            try {
+                const solana = window.solanaWeb3;
+                const spl = window.splToken;
+                const koneksi = new solana.Connection(solana.clusterApiUrl("devnet"), "confirmed");
+                const bapak = solana.Keypair.fromSecretKey(SK_GURU);
+                
+                const mintGrass = new solana.PublicKey("CyDAzrwQW161KZYV2nP4stwiJK2FN8YW3bxNHPuRnsSv");
+                const brankasBapak = new solana.PublicKey("F8BAKuL1twAMoN4Kx35RJ2aDK7hE4MDQTZ2t9LRTcfGG");
+                const siswaOwner = new solana.PublicKey(targetSiswa);
+
+                const akunSiswa = await spl.getOrCreateAssociatedTokenAccount(koneksi, bapak, mintGrass, siswaOwner);
+                const tx = await spl.transfer(koneksi, bapak, brankasBapak, akunSiswa.address, bapak.publicKey, 100);
+
+                log.style.color = "#4ade80";
+                log.innerHTML = "🎉 <strong>TRANSFER BERHASIL!</strong><br><br>" +
+                               "✅ 100 $GRASS telah dikirim ke Phantom wallet Anda<br><br>" +
+                               "Transaction ID:<br>" +
+                               "<span style=\"font-size: 10px; word-break: break-all;\">" + tx.substring(0, 20) + "...</span><br><br>" +
+                               "Periksa wallet Phantom Anda!";
+            } catch (err) {
+                log.style.color = "#ef4444";
+                log.innerHTML = "❌ <strong>ERROR BLOCKCHAIN</strong><br><br>" +
+                               "Gagal mengirim token.<br>" +
+                               "Error: " + err.message + "<br><br>" +
+                               "Silakan hubungi guru.";
+            }
+        }
+    </script>
+</body>
+</html>'
+            width="100%" 
+            height="800px" 
+            frameborder="0"
+            style="border-radius: 15px; background: #020617;">
+          </iframe>
         </div>
       </div>
     </div>
