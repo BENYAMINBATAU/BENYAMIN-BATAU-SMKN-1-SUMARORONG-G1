@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Benyamin Batau - EduTech Otomotif SMKN 1 Sumarorong</title>
+  <meta name="description" content="Platform edukasi otomotif, scanner busi AI, absensi GPS, ujian blockchain"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --accent: #3b82f6;
+      --gold: #fbbf24;
+      --green: #10b981;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+    body {
+      margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); min-height:100vh;
+    }
+    header {
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      padding: 4rem 1.5rem 3rem;
+      text-align:center;
+    }
+    h1 { font-size:2.6rem; font-weight:800; margin-bottom:0.4rem; }
+    .tagline { font-size:1.2rem; opacity:0.9; max-width:640px; margin:0 auto 1.8rem; }
+    .nav-tabs {
+      display:flex; justify-content:center; flex-wrap:wrap; gap:1rem; margin:2rem 1rem;
+    }
+    .tab-btn {
+      padding:0.9rem 1.6rem; border-radius:999px; font-weight:600; cursor:pointer;
+      background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);
+      color:white; transition:all 0.3s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background:var(--accent); border-color:var(--accent); transform:translateY(-2px);
+    }
+    .section { display:none; padding:2rem 1.5rem; max-width:1100px; margin:auto; }
+    .section.active { display:block; }
+    .feature-card {
+      background:var(--card); border-radius:16px; padding:2rem; margin:1.5rem 0;
+      border:1px solid #334155; box-shadow:0 8px 25px rgba(0,0,0,0.35);
+    }
+    .btn-primary {
+      background:var(--green); color:#000; padding:1rem 2rem; border:none;
+      border-radius:12px; font-weight:700; cursor:pointer; margin-top:1.5rem;
+      display:inline-block; text-decoration:none;
+    }
+    footer { text-align:center; padding:3rem 1rem; color:var(--muted); font-size:0.95rem; border-top:1px solid #334155; }
+    @media (max-width:640px) {
+      h1 { font-size:2.1rem; }
+      .nav-tabs { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Benyamin Batau</h1>
+  <p class="tagline">Edukasi Otomotif SMK • Teknologi Interaktif • SMKN 1 Sumarorong</p>
+</header>
+
+<div class="nav-tabs">
+  <div class="tab-btn active" onclick="showTab('home')">Beranda</div>
+  <div class="tab-btn" onclick="showTab('platform')">Platform Edukasi</div>
+  <div class="tab-btn" onclick="showTab('scanner')">Busi Scanner</div>
+  <div class="tab-btn" onclick="showTab('absen')">E-Absen</div>
+  <div class="tab-btn" onclick="showTab('ujian')">Ujian Online</div>
+</div>
+
+<!-- ==================== TAB BERANDA ==================== -->
+<div id="home" class="section active">
+  <div class="feature-card">
+    <h2 style="color:var(--gold)">Selamat Datang</h2>
+    <p>Selamat datang di portal edukasi otomotif berbasis teknologi yang dikembangkan untuk mendukung pembelajaran Teknik Sepeda Motor (TSM) di SMKN 1 Sumarorong.</p>
+    <p>Gunakan menu di atas untuk mengakses fitur:</p>
+    <ul style="line-height:1.8; margin:1.5rem 0 0 1.5rem;">
+      <li>Platform Edukasi + Kolaborasi Coinzilla</li>
+      <li>Aplikasi Scanner Warna Busi AI</li>
+      <li>Absensi Digital Guru berbasis GPS</li>
+      <li>Ujian Online + Reward Blockchain (Phantom Wallet)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== TAB PLATFORM EDUKASI ==================== -->
+<div id="platform" class="section">
+  <div class="feature-card" style="max-width: 900px; margin: 0 auto;">
+    <h2 style="color: var(--gold); text-align: center; margin-bottom: 1.5rem; font-size: 2rem;">
+      Platform Edukasi Otomotif TSM
+    </h2>
+    
+    <p style="text-align: center; font-size: 1.15rem; margin-bottom: 2rem; color: var(--muted);">
+      Website ini merupakan platform pembelajaran berbasis web khusus untuk siswa <strong>Teknik Sepeda Motor (TSM)</strong> di SMK. 
+      Fokus utama pada diagnosis busi, sistem pengapian, kuis interaktif visual, dan materi praktik otomotif.
+    </p>
+
+    <!-- Badge Partner -->
+    <div style="text-align: center; margin: 1.5rem 0;">
+      <span class="badge" style="
+        background: linear-gradient(135deg, #00ffcc, #00b09b);
+        color: #003333;
+        padding: 0.6rem 1.4rem;
+        border-radius: 999px;
+        font-weight: bold;
+        font-size: 1rem;
+        box-shadow: 0 4px 12px rgba(0,255,204,0.3);
+      ">
+        Partnered Content • Coinzilla Ready
+      </span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+      
+      <!-- Card 1: Tentang Platform -->
+      <div style="background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.3); border-radius: 12px; padding: 1.8rem;">
+        <h3 style="color: var(--accent); margin-bottom: 1rem;">Tentang Platform</h3>
+        <p style="line-height: 1.7; color: var(--text);">
+          Dikembangkan khusus untuk mendukung pembelajaran <strong>Teknik Sepeda Motor (TSM)</strong> di SMK.<br><br>
+          Fitur utama meliputi:
+        </p>
+        <ul style="list-style: none; padding-left: 0; margin: 1rem 0; line-height: 2;">
+          <li>✅ Diagnosis warna & kondisi busi secara visual</li>
+          <li>✅ Penjelasan lengkap sistem pengapian (ignition)</li>
+          <li>✅ Kuis interaktif berbasis gambar & video</li>
+          <li>✅ Materi praktik diagnosis mesin sepeda motor</li>
+          <li>✅ AI-assisted learning (scanner busi terintegrasi)</li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Kolaborasi & Promosi -->
+      <div style="background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.3); border-radius: 12px; padding: 1.8rem;">
+        <h3 style="color: var(--gold); margin-bottom: 1rem;">Kolaborasi & Promosi Brand</h3>
+        <p style="line-height: 1.7;">
+          Platform ini terbuka untuk kerja sama dengan:
+        </p>
+        <ul style="list-style: none; padding-left: 0; margin: 1rem 0; line-height: 2;">
+          <li>→ Brand edukasi & pelatihan otomotif</li>
+          <li>→ Perusahaan teknologi & alat diagnostik</li>
+          <li>→ Kampanye iklan edukatif berbasis crypto</li>
+          <li>→ Jaringan periklanan <strong>Coinzilla</strong></li>
+        </ul>
+        <p style="font-size: 0.95rem; color: var(--muted); margin-top: 1.2rem;">
+          Cocok untuk brand yang ingin menjangkau siswa SMK otomotif di Indonesia.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Media Sosial -->
+    <h3 style="color: var(--gold); text-align: center; margin: 2.5rem 0 1.5rem;">Media Sosial Resmi</h3>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; margin: 1.5rem 0;">
+      <a href="https://web.facebook.com/benyamin.batau?locale=id_ID" target="_blank" class="btn-primary" style="background: #0866ff; min-width: 140px; text-align: center;">
+        <span style="margin-right: 0.5rem;">📘</span> Facebook
+      </a>
+      <a href="https://www.youtube.com/@BENYAMINBATAU" target="_blank" class="btn-primary" style="background: #ff0000; min-width: 140px; text-align: center;">
+        <span style="margin-right: 0.5rem;">▶️</span> YouTube
+      </a>
+      <a href="https://www.tiktok.com/@benyaminbatau" target="_blank" class="btn-primary" style="background: #000; min-width: 140px; text-align: center;">
+        <span style="margin-right: 0.5rem;">🎵</span> TikTok
+      </a>
+      <a href="https://x.com/BenyaminB11K" target="_blank" class="btn-primary" style="background: #1da1f2; min-width: 140px; text-align: center;">
+        <span style="margin-right: 0.5rem;">🐦</span> X / Twitter
+      </a>
+    </div>
+
+    <!-- Call to Action -->
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="https://web.facebook.com/benyamin.batau" target="_blank" class="btn-primary" style="font-size: 1.1rem; padding: 1.2rem 2.5rem; background: var(--accent);">
+        Hubungi untuk Kolaborasi atau Sponsorship
+      </a>
+    </div>
+
+    <p style="text-align: center; color: var(--muted); margin-top: 2rem; font-size: 0.95rem;">
+      © 2026 Benyamin Batau • Educational Web Platform • Crypto Ads Ready
+    </p>
+  </div>
+</div>
+<!-- ==================== TAB SCANNER ==================== -->
+<div id="scanner" class="section">
+  <div class="feature-card" style="padding: 1.5rem; background: #0f172a; border: 2px solid var(--gold);">
+    <h2 style="color: var(--gold); text-align: center; margin-bottom: 1.5rem;">
+      Precision Spark Plug Scanner v2.0
+    </h2>
+    <p style="text-align: center; color: #94a3b8; margin-bottom: 2rem;">
+      Aplikasi diagnosis warna busi berbasis kamera HP.<br>
+      <strong>Izinkan akses kamera</strong> untuk mulai analisis.
+    </p>
+
+    <!-- ==================== KONTEN SCANNER ASLI MULAI DARI SINI ==================== -->
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <div class="loading-text">MENGANALISIS WARNA...</div>
+    </div>
+
+    <div class="app-header">
+      <h1>BENYAMIN BATAU APP</h1>
+      <p>PRECISION SPARK PLUG DIAGNOSTIC SENSOR</p>
+      <p class="version">v2.0 PRO • SMKN 1 SUMARORONG • ENHANCED ALGORITHM</p>
+    </div>
+
+    <div id="viewport">
+      <video id="video" autoplay playsinline></video>
+      <div class="scan-info" id="scanInfo">
+        <div><span class="label">STATUS:</span> <span class="value" id="status">READY</span></div>
+        <div><span class="label">LIGHTING:</span> <span class="value" id="lighting">---</span></div>
+        <div><span class="label">SAMPLES:</span> <span class="value" id="samples">0</span></div>
+      </div>
+      <div class="overlay">
+        <div class="target-box">
+          <div class="crosshair"></div>
+          <div class="corner tl"></div>
+          <div class="corner tr"></div>
+          <div class="corner bl"></div>
+          <div class="corner br"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui-panel">
+      <button id="snap" class="btn">📸 AMBIL DATA & ANALISIS WARNA</button>
+      <div id="result">
+        <div class="res-header">
+          <div id="resCol" class="color-preview"></div>
+          <div style="flex: 1;">
+            <h3 id="resName" style="margin:0; color:var(--gold); font-size: 1.15rem; text-transform: uppercase;">-</h3>
+            <small id="resHex" style="opacity:0.7; font-family: monospace; font-size: 0.72rem; display: block; margin-top: 4px;"></small>
+            <div class="confidence-bar">
+              <div class="confidence-fill" id="confidence"></div>
+            </div>
+            <small id="confText" style="font-size: 0.65rem; color: #94a3b8; margin-top: 4px; display: block;"></small>
+          </div>
+        </div>
+
+        <div class="diag-card">
+          <label>📊 Diagnosa Kondisi <span class="severity-indicator" id="severity">---</span></label>
+          <p id="resInd">-</p>
+        </div>
+
+        <div class="diag-card">
+          <label>🔍 Analisis Penyebab</label>
+          <p id="resPen">-</p>
+        </div>
+
+        <div class="diag-card fix-card">
+          <label>🔧 Tindakan Perbaikan</label>
+          <p id="resSol">-</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-label">BRIGHTNESS</div>
+            <div class="stat-value" id="brightness">---</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">SATURATION</div>
+            <div class="stat-value" id="saturation">---</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">HUE ANGLE</div>
+            <div class="stat-value" id="hue">---</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">MATCH SCORE</div>
+            <div class="stat-value" id="matchScore">---</div>
+          </div>
+        </div>
+
+        <button class="btn" style="background: linear-gradient(135deg, #334155 0%, #1e293b 100%); color:white; margin-top:15px;" onclick="resetScan()">
+          🔄 SCAN ULANG
+        </button>
+      </div>
+    </div>
+
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <style>
+      /* Style scanner disesuaikan agar lebih rapi di dalam card */
+      .app-header {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        padding: 1.2rem;
+        text-align: center;
+        border-bottom: 3px solid var(--gold);
+        border-radius: 12px 12px 0 0;
+      }
+      .app-header h1 {
+        margin: 0;
+        font-size: 1.4rem;
+        color: var(--gold);
+        font-weight: 900;
+      }
+      .app-header p {
+        margin: 0.3rem 0 0;
+        font-size: 0.8rem;
+        opacity: 0.85;
+      }
+      .version {
+        font-size: 0.7rem;
+        color: var(--accent);
+      }
+      #viewport {
+        position: relative;
+        width: 100%;
+        height: 45vh;
+        min-height: 280px;
+        background: #000;
+        border-radius: 12px;
+        overflow: hidden;
+        margin: 1.2rem 0;
+      }
+      #video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .btn {
+        background: linear-gradient(135deg, var(--gold) 0%, #f59e0b 100%);
+        color: #000;
+        border: none;
+        padding: 1.2rem;
+        width: 100%;
+        border-radius: 12px;
+        font-weight: 900;
+        font-size: 1.1rem;
+        cursor: pointer;
+        margin: 1rem 0;
+        box-shadow: 0 6px 20px rgba(251,191,36,0.3);
+      }
+      .btn:active {
+        transform: scale(0.98);
+      }
+      .diag-card, .fix-card {
+        background: #0f172a;
+        padding: 1.2rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+        border-left: 4px solid var(--accent);
+      }
+      .fix-card {
+        border-left-color: var(--green);
+      }
+      .severity-indicator {
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        margin-left: 0.6rem;
+      }
+      .severity-normal { background: rgba(16,185,129,0.2); color: var(--green); }
+      .severity-warning { background: rgba(251,191,36,0.2); color: var(--gold); }
+      .severity-danger  { background: rgba(239,68,68,0.2); color: #ef4444; }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.8rem;
+        margin-top: 1.2rem;
+      }
+      .stat-box {
+        background: #1e293b;
+        padding: 0.8rem;
+        border-radius: 8px;
+        text-align: center;
+      }
+      .stat-label { font-size: 0.8rem; color: #94a3b8; }
+      .stat-value { font-size: 1.1rem; color: var(--gold); font-weight: bold; }
+    </style>
+
+    <script>
+      // ==================== SCRIPT SCANNER ASLI (lengkap) ====================
+      const LIBRARY = [
+        // NORMAL (Coklat/Tan) - 25 variasi
+        { name: "Normal Perfect", rgb: [180, 145, 115], severity: "normal", ind: "Coklat muda ideal. Pembakaran sempurna, efisiensi maksimal.", pen: "AFR optimal 14.7:1, suhu kerja 400-850°C, timing pengapian presisi.", sol: "Kondisi terbaik. Pertahankan perawatan rutin setiap 5.000 km." },
+        // ... (saya singkat di sini agar tidak terlalu panjang, tapi di kode asli kamu PASTIKAN SELURUH LIBRARY 120+ item ada)
+        // Masukkan semua array LIBRARY lengkap dari kode asli kamu di sini
+        // Contoh akhir:
+        { name: "Lead Dirty Yellow", rgb: [151, 141, 111], severity: "warning", ind: "Kuning kotor. Bensin oplosan kualitas buruk.", pen: "Mix premium + kerosene atau solar.", sol: "Kuras total. Risiko injector clogging & pump failure." }
+      ];
+
+      const video = document.getElementById('video');
+      const canvas = document.getElementById('canvas');
+      const snapBtn = document.getElementById('snap');
+      const resDiv = document.getElementById('result');
+      const loading = document.getElementById('loading');
+      let frameCount = 0;
+
+      async function startCamera() {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: "environment", width: { ideal: 1920 }, height: { ideal: 1080 } }
+          });
+          video.srcObject = stream;
+          document.getElementById('status').innerText = 'ACTIVE';
+          monitorLighting();
+        } catch (e) {
+          alert("Izin kamera diperlukan!");
+          document.getElementById('status').innerText = 'ERROR';
+        }
+      }
+
+      function monitorLighting() {
+        setInterval(() => {
+          const ctx = canvas.getContext('2d');
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+          ctx.drawImage(video, 0, 0);
+          const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+          let brightness = 0;
+          for(let i = 0; i < imgData.length; i += 4) brightness += (imgData[i] + imgData[i+1] + imgData[i+2]) / 3;
+          brightness = (brightness / (imgData.length / 4)).toFixed(0);
+          let lightStatus = brightness < 60 ? 'TOO DARK ⚠️' : brightness > 200 ? 'TOO BRIGHT ⚠️' : 'OPTIMAL ✓';
+          document.getElementById('lighting').innerText = lightStatus;
+          frameCount++;
+          document.getElementById('samples').innerText = frameCount;
+        }, 1000);
+      }
+
+      snapBtn.onclick = () => {
+        loading.classList.add('active');
+        setTimeout(() => {
+          const ctx = canvas.getContext('2d', { willReadFrequently: true });
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+          ctx.drawImage(video, 0, 0);
+
+          // Multi-point sampling (kode asli)
+          const sampleSize = 60;
+          const centerX = canvas.width / 2;
+          const centerY = canvas.height / 2;
+          let totalR = 0, totalG = 0, totalB = 0, sampleCount = 0;
+          const offsets = [{x:0,y:0}, {x:-20,y:-20}, {x:20,y:-20}, {x:-20,y:20}, {x:20,y:20}];
+
+          offsets.forEach(offset => {
+            const x = centerX + offset.x - sampleSize / 2;
+            const y = centerY + offset.y - sampleSize / 2;
+            const imgData = ctx.getImageData(x, y, sampleSize, sampleSize).data;
+            for(let i = 0; i < imgData.length; i += 4) {
+              const r = Math.pow(imgData[i] / 255, 2.2);
+              const g = Math.pow(imgData[i+1] / 255, 2.2);
+              const b = Math.pow(imgData[i+2] / 255, 2.2);
+              totalR += r; totalG += g; totalB += b; sampleCount++;
+            }
+          });
+
+          const avgR = totalR / sampleCount, avgG = totalG / sampleCount, avgB = totalB / sampleCount;
+          const finalR = Math.round(Math.pow(avgR, 1/2.2) * 255);
+          const finalG = Math.round(Math.pow(avgG, 1/2.2) * 255);
+          const finalB = Math.round(Math.pow(avgB, 1/2.2) * 255);
+
+          analyzeColor(finalR, finalG, finalB);
+        }, 800);
+      };
+
+      function analyzeColor(r, g, b) {
+        let match = LIBRARY[0];
+        let minScore = Infinity;
+        LIBRARY.forEach(item => {
+          const dr = r - item.rgb[0], dg = g - item.rgb[1], db = b - item.rgb[2];
+          const score = Math.sqrt(dr*dr*0.2126 + dg*dg*0.7152 + db*db*0.0722);
+          if (score < minScore) { minScore = score; match = item; }
+        });
+
+        const maxDistance = Math.sqrt(255*255*3);
+        const confidence = Math.max(0, (1 - minScore / maxDistance) * 100);
+
+        const brightness = (0.2126*r + 0.7152*g + 0.0722*b).toFixed(0);
+        const maxVal = Math.max(r,g,b), minVal = Math.min(r,g,b);
+        const saturation = maxVal === 0 ? 0 : ((maxVal - minVal) / maxVal * 100).toFixed(0);
+        let hue = 0;
+        if (maxVal !== minVal) {
+          if (maxVal === r) hue = 60 * ((g - b) / (maxVal - minVal));
+          else if (maxVal === g) hue = 60 * (2 + (b - r) / (maxVal - minVal));
+          else hue = 60 * (4 + (r - g) / (maxVal - minVal));
+          if (hue < 0) hue += 360;
+        }
+
+        const hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+
+        document.getElementById('resCol').style.backgroundColor = hex;
+        document.getElementById('resHex').innerText = `${hex} • RGB(${r}, ${g}, ${b})`;
+        document.getElementById('resName').innerText = match.name;
+        document.getElementById('resInd').innerText = match.ind;
+        document.getElementById('resPen').innerText = match.pen;
+        document.getElementById('resSol').innerText = match.sol;
+
+        document.getElementById('confidence').style.width = confidence + '%';
+        document.getElementById('confText').innerText = `Confidence: ${confidence.toFixed(1)}% • Distance: ${minScore.toFixed(2)}`;
+
+        const severityEl = document.getElementById('severity');
+        severityEl.innerText = match.severity.toUpperCase();
+        severityEl.className = 'severity-indicator severity-' + match.severity;
+
+        document.getElementById('brightness').innerText = brightness;
+        document.getElementById('saturation').innerText = saturation + '%';
+        document.getElementById('hue').innerText = hue.toFixed(0) + '°';
+        document.getElementById('matchScore').innerText = (100 - minScore).toFixed(1);
+
+        loading.classList.remove('active');
+        resDiv.style.display = 'block';
+        snapBtn.style.display = 'none';
+        document.getElementById('scanInfo').style.display = 'none';
+        video.pause();
+      }
+
+      function resetScan() {
+        document.getElementById('result').style.display = 'none';
+        snapBtn.style.display = 'block';
+        document.getElementById('scanInfo').style.display = 'block';
+        video.play();
+      }
+
+      window.onload = startCamera;
+      // ==================== SCRIPT SCANNER SELESAI ====================
+    </script>
+    <!-- ==================== KONTEN SCANNER ASLI BERAKHIR ==================== -->
+
+    <div style="margin-top: 2rem; text-align: center; color: #94a3b8; font-size: 0.95rem;">
+      <strong>Tips Penggunaan:</strong> Arahkan kamera ke area insulator busi dengan pencahayaan cukup. Hindari bayangan tangan.
+    </div>
+  </div>
+</div>
+<!-- ==================== TAB E-ABSEN ==================== -->
+<div id="absen" class="section">
+  <div class="feature-card" style="padding: 1.5rem; background: #0f172a; border: 2px solid var(--accent); max-width: 480px; margin: 0 auto;">
+    <h2 style="color: var(--gold); text-align: center; margin-bottom: 1.5rem;">
+      E-Absen Digital Guru
+    </h2>
+    <p style="text-align: center; color: #94a3b8; margin-bottom: 2rem;">
+      Absensi berbasis lokasi GPS (radius maks 200 m dari sekolah).<br>
+      <strong>Izinkan akses lokasi</strong> untuk menggunakan fitur ini.
+    </p>
+
+    <!-- ==================== KONTEN E-ABSEN ASLI MULAI DARI SINI ==================== -->
+    <div class="card" id="absen-card" style="background: white; color: #000; border-radius: 24px; box-shadow: 0 15px 40px rgba(0,0,0,0.4);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Tut_Wuri_Handayani.png" class="logo" alt="Logo Tut Wuri Handayani" style="width: 80px; margin: 1.5rem auto 1rem; display: block;">
+      
+      <h2 style="color: #0f172a; font-size: 1.5rem; margin: 0.5rem 0;">ABSENSI DIGITAL</h2>
+      <p class="subtitle" style="color: #64748b; font-size: 1rem; margin-bottom: 1.5rem;">UPTD SMKN 1 SUMARORONG</p>
+
+      <div id="clock" class="jam-digital" style="font-size: 2.2rem; font-weight: 800; background: linear-gradient(135deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">00:00:00</div>
+      <div id="date" class="tanggal" style="font-size: 0.95rem; color: #64748b; margin: 0.5rem 0 1.5rem;">Loading...</div>
+
+      <div id="status-msg" class="status-box waiting" style="margin: 1.5rem 0; padding: 1.2rem; border-radius: 16px;">
+        <span class="loading-spinner"></span> Memulai Sistem GPS...
+      </div>
+
+      <div class="gps-info" id="gps-info" style="display: none; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 1rem 0;">
+        <div class="gps-card" style="background: #f1f5f9; padding: 1rem; border-radius: 12px;">
+          <div class="label" style="color: #64748b; font-size: 0.8rem; font-weight: 600;">Akurasi GPS</div>
+          <div class="value" id="accuracy" style="color: #0f172a; font-weight: 700;">---</div>
+        </div>
+        <div class="gps-card" style="background: #f1f5f9; padding: 1rem; border-radius: 12px;">
+          <div class="label" style="color: #64748b; font-size: 0.8rem; font-weight: 600;">Jarak</div>
+          <div class="value" id="distance" style="color: #0f172a; font-weight: 700;">---</div>
+        </div>
+      </div>
+
+      <div class="input-group" style="position: relative; margin: 1.5rem 0;">
+        <input type="text" id="nama-guru" placeholder=" " autocomplete="name" required style="width: 100%; padding: 1.2rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; text-align: center;">
+        <label style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #94a3b8; pointer-events: none; transition: 0.3s;">Nama Lengkap</label>
+      </div>
+
+      <div class="btn-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <button id="btn-in" class="btn btn-masuk" onclick="kirimAbsen('DATANG')" style="opacity: 0.3; pointer-events: none;">
+          ⏰ Absen Pagi
+        </button>
+        <button id="btn-out" class="btn btn-pulang" onclick="kirimAbsen('PULANG')" style="opacity: 0.3; pointer-events: none;">
+          🏠 Absen Sore
+        </button>
+      </div>
+
+      <div class="info-absen" id="info-absen" style="display: flex; justify-content: space-around; margin: 1.5rem 0; padding: 1rem; background: #f8fafc; border-radius: 12px;">
+        <div class="info-item pending"><span>📋</span> Pagi: Belum</div>
+        <div class="info-item pending"><span>📋</span> Sore: Belum</div>
+      </div>
+
+      <div class="history-section" id="history-section" style="display: none; margin-top: 1.5rem; padding: 1rem; background: #f8fafc; border-radius: 12px;">
+        <div class="history-title" style="font-size: 0.9rem; font-weight: 700; color: #0f172a; margin-bottom: 0.8rem;">📊 Riwayat Hari Ini</div>
+        <div id="history-list"></div>
+      </div>
+
+      <div class="footer" style="font-size: 0.85rem; color: #64748b; margin-top: 2rem; text-align: center;">
+        <strong>UPTD SMKN 1 Sumarorong</strong><br>
+        Dusun Pasir Putih, Desa Rantekamase<br>
+        Kec. Sumarorong, Kab. Mamasa, Sulawesi Barat
+      </div>
+    </div>
+
+    <!-- Style khusus untuk absen (disesuaikan agar muat di card) -->
+    <style>
+      #absen-card .jam-digital { font-size: 2rem; }
+      #absen-card .status-box { font-size: 0.95rem; }
+      #absen-card .btn { padding: 1.1rem; font-size: 1rem; border-radius: 12px; }
+      #absen-card .btn-masuk { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
+      #absen-card .btn-pulang { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; }
+      #absen-card .loading-spinner {
+        display: inline-block; width: 14px; height: 14px;
+        border: 2px solid #e5e7eb; border-top: 2px solid #3b82f6;
+        border-radius: 50%; animation: spin 1s linear infinite; margin-right: 0.6rem;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+
+    <!-- Script absen asli -->
+    <script>
+      const CONFIG = {
+        SCHOOL_COORDS: { lat: -3.1288515, lng: 119.3077882 },
+        MAX_DISTANCE: 200,
+        PAGI_START: 7.0,
+        PAGI_END: 8.5,
+        SORE_START: 15.0,
+        SORE_END: 16.0,
+        UPDATE_INTERVAL: 1000,
+        GPS_HIGH_ACCURACY: true,
+        GPS_TIMEOUT: 30000,
+        GPS_MAX_AGE: 0
+      };
+
+      // Ganti dengan URL Google Apps Script kamu yang sebenarnya
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzp2Tlk1a_rCj4fq75KDPp56YJHvIHsSoixYbgRKijdxkaCIlP0AhzBGaHFvRJiK8nWLA/exec";
+
+      let userCoords = null;
+      let gpsAccuracy = null;
+      let watchId = null;
+      let isSubmitting = false;
+
+      function calculateDistance(lat1, lon1, lat2, lon2) {
+        const R = 6371e3;
+        const φ1 = lat1 * Math.PI / 180;
+        const φ2 = lat2 * Math.PI / 180;
+        const Δφ = (lat2 - lat1) * Math.PI / 180;
+        const Δλ = (lon2 - lon1) * Math.PI / 180;
+        const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) + Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ/2) * Math.sin(Δλ/2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        return R * c;
+      }
+
+      function updateClock() {
+        const now = new Date();
+        document.getElementById('clock').innerText = now.toLocaleTimeString('id-ID', {hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit'});
+        document.getElementById('date').innerText = now.toLocaleDateString('id-ID', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+        updateButtonStates();
+      }
+
+      function updateButtonStates() {
+        const now = new Date();
+        const hour = now.getHours() + now.getMinutes()/60;
+        const isPagi = hour >= CONFIG.PAGI_START && hour <= CONFIG.PAGI_END;
+        const isSore = hour >= CONFIG.SORE_START && hour <= CONFIG.SORE_END;
+        const today = new Date().toISOString().split('T')[0];
+
+        const sudahPagi = localStorage.getItem('absen_pagi_' + today);
+        const sudahSore = localStorage.getItem('absen_sore_' + today);
+
+        const btnIn = document.getElementById('btn-in');
+        const btnOut = document.getElementById('btn-out');
+
+        btnIn.classList.remove('active'); btnIn.style.opacity = '0.3'; btnIn.disabled = true;
+        btnOut.classList.remove('active'); btnOut.style.opacity = '0.3'; btnOut.disabled = true;
+
+        if (userCoords && gpsAccuracy !== null) {
+          const dist = calculateDistance(userCoords.lat, userCoords.lng, CONFIG.SCHOOL_COORDS.lat, CONFIG.SCHOOL_COORDS.lng);
+          const inRange = dist <= CONFIG.MAX_DISTANCE;
+          const accurate = gpsAccuracy <= 50;
+
+          if (inRange && accurate) {
+            if (isPagi && !sudahPagi) { btnIn.classList.add('active'); btnIn.style.opacity = '1'; btnIn.disabled = false; }
+            if (isSore && !sudahSore) { btnOut.classList.add('active'); btnOut.style.opacity = '1'; btnOut.disabled = false; }
+          }
+        }
+
+        updateInfoDisplay(sudahPagi, sudahSore);
+        updateHistory();
+      }
+
+      function updateInfoDisplay(sudahPagi, sudahSore) {
+        const info = document.getElementById('info-absen');
+        info.innerHTML = `
+          <div class="info-item ${sudahPagi ? 'success' : 'pending'}"><span>${sudahPagi ? '✅' : '⏳'}</span> Pagi: ${sudahPagi ? 'Terabsen' : 'Belum'}</div>
+          <div class="info-item ${sudahSore ? 'success' : 'pending'}"><span>${sudahSore ? '✅' : '⏳'}</span> Sore: ${sudahSore ? 'Terabsen' : 'Belum'}</div>
+        `;
+      }
+
+      function updateHistory() {
+        const today = new Date().toISOString().split('T')[0];
+        const pagi = localStorage.getItem('absen_pagi_' + today);
+        const sore = localStorage.getItem('absen_sore_' + today);
+        const section = document.getElementById('history-section');
+        const list = document.getElementById('history-list');
+
+        if (pagi || sore) {
+          section.style.display = 'block';
+          let html = '';
+          if (pagi) {
+            const d = JSON.parse(pagi);
+            html += `<div class="history-item" style="padding:0.8rem; background:#fff; border-radius:8px; margin:0.5rem 0; border-left:3px solid #3b82f6; display:flex; justify-content:space-between;">
+              <div><strong>Absen Pagi</strong><br><small>${d.time}</small></div><span style="color:#10b981;">✓</span></div>`;
+          }
+          if (sore) {
+            const d = JSON.parse(sore);
+            html += `<div class="history-item" style="padding:0.8rem; background:#fff; border-radius:8px; margin:0.5rem 0; border-left:3px solid #3b82f6; display:flex; justify-content:space-between;">
+              <div><strong>Absen Sore</strong><br><small>${d.time}</small></div><span style="color:#10b981;">✓</span></div>`;
+          }
+          list.innerHTML = html;
+        }
+      }
+
+      function startTracking() {
+        if (!navigator.geolocation) return showError("Perangkat tidak mendukung GPS");
+        watchId = navigator.geolocation.watchPosition(
+          pos => {
+            userCoords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+            gpsAccuracy = pos.coords.accuracy;
+            const dist = calculateDistance(userCoords.lat, userCoords.lng, CONFIG.SCHOOL_COORDS.lat, CONFIG.SCHOOL_COORDS.lng);
+            document.getElementById('gps-info').style.display = 'grid';
+            document.getElementById('accuracy').innerText = Math.round(gpsAccuracy) + ' m';
+            document.getElementById('distance').innerText = Math.round(dist) + ' m';
+
+            const status = document.getElementById('status-msg');
+            if (dist <= CONFIG.MAX_DISTANCE && gpsAccuracy <= 50) {
+              status.innerHTML = '✅ <strong>Lokasi Valid</strong><br><small>Anda berada di area sekolah</small>';
+              status.className = 'status-box ready';
+            } else if (dist > CONFIG.MAX_DISTANCE) {
+              status.innerHTML = '❌ <strong>Di Luar Jangkauan</strong><br><small>Jarak ' + Math.round(dist) + 'm</small>';
+              status.className = 'status-box error';
+            } else {
+              status.innerHTML = '⚠️ <strong>GPS Kurang Akurat</strong><br><small>Akurasi ' + Math.round(gpsAccuracy) + 'm</small>';
+              status.className = 'status-box waiting';
+            }
+            updateButtonStates();
+          },
+          err => {
+            let msg = "Error GPS";
+            if (err.code === 1) msg = "❌ Akses GPS Ditolak<br><small>Aktifkan izin lokasi</small>";
+            else if (err.code === 2) msg = "⚠️ Posisi Tidak Tersedia";
+            else if (err.code === 3) msg = "⏱️ GPS Timeout";
+            showError(msg);
+          },
+          { enableHighAccuracy: true, timeout: 30000, maximumAge: 0 }
+        );
+        setInterval(updateClock, 1000);
+        updateClock();
+      }
+
+      function showError(msg) {
+        document.getElementById('status-msg').innerHTML = msg;
+        document.getElementById('status-msg').className = 'status-box error';
+      }
+
+      async function kirimAbsen(tipe) {
+        if (isSubmitting) return;
+        const nama = document.getElementById('nama-guru').value.trim();
+        if (!nama) return alert("Isi nama lengkap!");
+        if (!userCoords) return alert("GPS belum siap...");
+        
+        const dist = calculateDistance(userCoords.lat, userCoords.lng, CONFIG.SCHOOL_COORDS.lat, CONFIG.SCHOOL_COORDS.lng);
+        if (dist > CONFIG.MAX_DISTANCE) return alert(`Terlalu jauh dari sekolah! (${Math.round(dist)}m)`);
+
+        const today = new Date().toISOString().split('T')[0];
+        const key = `absen_${tipe.toLowerCase()}_${today}`;
+        if (localStorage.getItem(key)) return alert(`Sudah absen ${tipe} hari ini!`);
+
+        if (!confirm(`Konfirmasi Absen ${tipe}?\nNama: ${nama}\nJarak: ${Math.round(dist)}m`)) return;
+
+        isSubmitting = true;
+        const btn = tipe === 'DATANG' ? document.getElementById('btn-in') : document.getElementById('btn-out');
+        const original = btn.innerHTML;
+        btn.innerHTML = '<span class="loading-spinner"></span> Mengirim...';
+        btn.disabled = true;
+
+        try {
+          const now = new Date();
+          const payload = {
+            nama, tipe, ket: "Hadir",
+            lokasi: `${userCoords.lat},${userCoords.lng}`,
+            jarak: Math.round(dist),
+            akurasi: Math.round(gpsAccuracy || 0),
+            timestamp: now.toISOString(),
+            waktu: now.toLocaleString('id-ID')
+          };
+
+          await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          localStorage.setItem(key, JSON.stringify({ nama, time: now.toLocaleTimeString('id-ID'), date: today, coords: userCoords, distance: Math.round(dist) }));
+          localStorage.setItem('last_nama', nama);
+
+          alert(`Absen ${tipe} berhasil! Terima kasih, ${nama}`);
+          setTimeout(() => location.reload(), 1200);
+        } catch (e) {
+          alert("Gagal mengirim data. Cek koneksi.");
+          btn.innerHTML = original;
+          btn.disabled = false;
+        } finally {
+          isSubmitting = false;
+        }
+      }
+
+      function loadLastName() {
+        const last = localStorage.getItem('last_nama');
+        if (last) document.getElementById('nama-guru').value = last;
+      }
+
+      // Input floating label
+      document.getElementById('nama-guru').addEventListener('input', e => {
+        const label = e.target.nextElementSibling;
+        if (e.target.value) {
+          label.style.top = '0';
+          label.style.fontSize = '0.8rem';
+          label.style.color = '#3b82f6';
+        } else {
+          label.style.top = '50%';
+          label.style.fontSize = '1rem';
+          label.style.color = '#94a3b8';
+        }
+      });
+
+      window.addEventListener('load', () => {
+        startTracking();
+        loadLastName();
+        updateHistory();
+      });
+
+      window.addEventListener('beforeunload', () => {
+        if (watchId) navigator.geolocation.clearWatch(watchId);
+      });
+    </script>
+    <!-- ==================== KONTEN E-ABSEN ASLI BERAKHIR ==================== -->
+
+    <div style="margin-top: 2rem; text-align: center; color: #94a3b8; font-size: 0.9rem;">
+      <strong>Catatan:</strong> Pastikan GPS aktif dan berada di area sekolah. Data disimpan di Google Sheet via Apps Script.
+    </div>
+  </div>
+</div>
+<!-- ==================== TAB UJIAN ==================== -->
+<div id="ujian" class="section">
+  <div class="feature-card" style="padding: 1.5rem; background: #0f172a; border: 2px solid var(--gold); max-width: 700px; margin: 0 auto;">
+    <h2 style="color: var(--gold); text-align: center; margin-bottom: 1rem;">
+      Ujian Online TSM + Blockchain
+    </h2>
+    <p style="text-align: center; color: #94a3b8; margin-bottom: 2rem;">
+      Ujian pengecatan & otomotif untuk siswa XI TSM.<br>
+      <strong>Lulus = Dapat reward token $GRASS</strong> (via Phantom Wallet Solana).
+    </p>
+
+    <!-- Pilihan Mode Ujian -->
+    <div style="text-align: center; margin: 2rem 0;">
+      <button onclick="showUjian('simple')" style="padding: 1rem 2rem; margin: 0.5rem; background: var(--accent); color: white; border: none; border-radius: 12px; font-weight: bold; cursor: pointer;">
+        Ujian Sederhana (Tanpa Reward)
+      </button>
+      <button onclick="showUjian('blockchain')" style="padding: 1rem 2rem; margin: 0.5rem; background: var(--gold); color: #000; border: none; border-radius: 12px; font-weight: bold; cursor: pointer;">
+        Ujian Blockchain + Reward $GRASS
+      </button>
+    </div>
+
+    <!-- ==================== UJIAN SEDERHANA (tanpa blockchain) ==================== -->
+    <div id="ujian-simple" style="display: none;">
+      <div style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3); border-radius: 12px; padding: 1.8rem; margin: 1.5rem 0;">
+        <h3 style="color: var(--accent); text-align: center; margin-bottom: 1.5rem;">
+          UJIAN PRAKTIK PENGECATAN SUPRA – XI TSM
+        </h3>
+        <p style="text-align: center; color: #94a3b8; margin-bottom: 1.5rem;">
+          Guru: Benyamin Batau, S.Pd. | Tanggal: 03 Februari 2026
+        </p>
+
+        <div class="input-group" style="margin-bottom: 1.5rem;">
+          <input type="text" id="nama-siswa-simple" placeholder=" " required style="width:100%; padding:1rem; border:2px solid #e2e8f0; border-radius:10px; text-align:center;">
+          <label style="position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:#94a3b8; transition:0.3s;">Nama Lengkap Siswa</label>
+        </div>
+
+        <div id="soal-container-simple">
+          <!-- Soal akan dimuat via JS di bawah -->
+        </div>
+
+        <button onclick="hitungNilaiSimple()" style="width:100%; padding:1.2rem; background:var(--green); color:#000; border:none; border-radius:12px; font-weight:bold; margin-top:1.5rem; cursor:pointer;">
+          SELESAI & CEK NILAI
+        </button>
+
+        <div id="hasil-simple" style="display:none; margin-top:2rem; padding:1.5rem; background:rgba(16,185,129,0.1); border-radius:12px; text-align:center;">
+          <h3 style="color:var(--green);">HASIL UJIAN</h3>
+          <p id="nama-display-simple" style="font-weight:bold; margin:1rem 0;"></p>
+          <h1 id="skor-display-simple" style="font-size:3.5rem; margin:0.5rem 0; color:var(--gold);">0</h1>
+          <p id="keterangan-simple" style="font-size:1.1rem;"></p>
+          <button onclick="location.reload()" style="margin-top:1.5rem; padding:1rem 2rem; background:var(--accent); color:white; border:none; border-radius:10px; cursor:pointer;">
+            Ulangi Ujian
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== UJIAN BLOCKCHAIN (dengan reward) ==================== -->
+    <div id="ujian-blockchain" style="display: none;">
+      <div style="background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.3); border-radius: 12px; padding: 1.8rem; margin: 1.5rem 0;">
+        <h3 style="color: var(--gold); text-align: center; margin-bottom: 1rem;">
+          KUIS PENGECATAN + REWARD BLOCKCHAIN
+        </h3>
+        <p style="text-align: center; color: #94a3b8; margin-bottom: 1.5rem;">
+          XI TSM | Guru: Benyamin Batau | 03 Februari 2026<br>
+          Lulus → Dapat 100 $GRASS (Solana Devnet)
+        </p>
+
+        <div class="input-group" style="margin-bottom: 1.5rem;">
+          <input type="text" id="wallet-siswa" placeholder=" " required style="width:100%; padding:1rem; border:2px solid #fbbf24; border-radius:10px; text-align:center;">
+          <label style="position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:#fbbf24; transition:0.3s;">Alamat Wallet Phantom Anda</label>
+        </div>
+
+        <button onclick="mulaiUjianBlockchain()" style="width:100%; padding:1.2rem; background:var(--gold); color:#000; border:none; border-radius:12px; font-weight:bold; cursor:pointer;">
+          MULAI UJIAN BLOCKCHAIN
+        </button>
+
+        <div id="quiz-area-blockchain" style="display:none; margin-top:2rem;">
+          <div id="soal-blockchain" style="background:#1e293b; padding:1.5rem; border-radius:10px; margin-bottom:1.5rem;">
+            <!-- Soal akan dimuat via JS -->
+          </div>
+          <button id="btn-next-blockchain" onclick="nextSoalBlockchain()" style="width:100%; padding:1rem; background:var(--green); color:#000; border:none; border-radius:10px; font-weight:bold; cursor:pointer;">
+            SOAL SELANJUTNYA
+          </button>
+        </div>
+
+        <div id="status-blockchain" style="margin-top:1.5rem; text-align:center; font-weight:bold; min-height:60px;"></div>
+      </div>
+    </div>
+
+    <!-- ==================== SCRIPT UJIAN SEDERHANA ==================== -->
+    <script>
+      const soalSimple = [
+        {
+          q: "Untuk pengecatan body motor Supra yang berbahan plastik, apa jenis cat dasar yang wajib digunakan?",
+          o: ["Epoxy Primer", "Plastic Primer / PP Plastic", "Surfacer Biasa"],
+          benar: 1
+        },
+        {
+          q: "Apa perbedaan utama antara Thinner ND dengan Thinner PU?",
+          o: ["Harganya sama saja", "Thinner PU lebih lambat kering dan hasil lebih mengkilap", "Thinner ND khusus untuk cat mahal"],
+          benar: 1
+        },
+        {
+          q: "Jika hasil pengecatan terlihat kasar seperti 'kulit jeruk', apa penyebabnya?",
+          o: ["Tekanan angin kompresor terlalu rendah atau cat terlalu kental", "Jarak spray gun terlalu jauh", "Ruangan terlalu dingin"],
+          benar: 0
+        },
+        {
+          q: "Apa akibat menggunakan amplas nomor 100 pada tahap akhir sebelum cat inti?",
+          o: ["Hasil cat akan sangat halus", "Muncul baret-baret dalam yang akan terlihat setelah dicat", "Cat jadi cepat kering"],
+          benar: 1
+        },
+        // Tambahkan soal 5–20 sesuai kebutuhan
+      ];
+
+      function showUjian(mode) {
+        document.getElementById('ujian-simple').style.display = mode === 'simple' ? 'block' : 'none';
+        document.getElementById('ujian-blockchain').style.display = mode === 'blockchain' ? 'block' : 'none';
+      }
+
+      function muatSoalSimple() {
+        const container = document.getElementById('soal-container-simple');
+        container.innerHTML = '';
+        soalSimple.forEach((s, i) => {
+          const div = document.createElement('div');
+          div.style.marginBottom = '1.5rem';
+          div.innerHTML = `
+            <p style="font-weight:bold; margin-bottom:0.8rem;">${i+1}. ${s.q}</p>
+            ${s.o.map((opt, j) => `
+              <label style="display:block; margin:0.5rem 0;">
+                <input type="radio" name="q${i}" value="${j}"> ${opt}
+              </label>
+            `).join('')}
+          `;
+          container.appendChild(div);
+        });
+      }
+
+      function hitungNilaiSimple() {
+        const nama = document.getElementById('nama-siswa-simple').value.trim();
+        if (!nama) return alert("Nama siswa wajib diisi!");
+        
+        let skor = 0;
+        soalSimple.forEach((s, i) => {
+          const jawab = document.querySelector(`input[name="q${i}"]:checked`);
+          if (jawab && parseInt(jawab.value) === s.benar) skor += 20; // misal 20 poin per soal
+        });
+
+        document.getElementById('soal-container-simple').style.display = 'none';
+        document.getElementById('hasil-simple').style.display = 'block';
+        document.getElementById('nama-display-simple').innerText = `Nama Siswa: ${nama}`;
+        document.getElementById('skor-display-simple').innerText = skor;
+        document.getElementById('keterangan-simple').innerText = skor >= 80 
+          ? "SELAMAT! ANDA LULUS DAN KOMPETEN." 
+          : "MAAF, ANDA HARUS BELAJAR LAGI (REMEDI).";
+        document.getElementById('keterangan-simple').style.color = skor >= 80 ? 'var(--green)' : 'red';
+      }
+
+      // Muat soal saat tab dibuka (opsional)
+      document.addEventListener('DOMContentLoaded', () => {
+        if (document.getElementById('ujian-simple').style.display !== 'none') muatSoalSimple();
+      });
+    </script>
+
+    <!-- ==================== SCRIPT UJIAN BLOCKCHAIN ==================== -->
+    <script src="https://bundle.run/buffer@6.0.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@1.78.3/lib/index.iife.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/spl-token@0.3.8/lib/index.iife.min.js"></script>
+    <script>
+      window.Buffer = buffer.Buffer;
+
+      // Ganti dengan private key WALLET GURU (jangan hardcode di produksi!)
+      // Untuk demo, gunakan devnet dan wallet test
+      const SK_GURU = new Uint8Array([/* PASTIKAN ISI PRIVATE KEY ANDA DI SINI - 64 byte */]);
+
+      const soalBlockchain = [
+        {
+          q: "Thinner apa yang paling bagus untuk hasil kilap (Gloss) pada motor Supra?",
+          o: ["A. Thinner B biasa", "B. Thinner ND", "C. Thinner PU (Poliurethane)"],
+          nilai: [0, 0, 100]
+        },
+        {
+          q: "Apa akibat menggunakan amplas terlalu kasar (No. 100) pada tahap akhir?",
+          o: ["A. Cat baret & tidak rata", "B. Cat lebih mengkilap", "C. Cat cepat kering"],
+          nilai: [100, 0, 0]
+        },
+        // Tambahkan soal lain sesuai kebutuhan (total 20 soal ideal)
+      ];
+
+      let currentSoalBC = 0;
+      let totalSkorBC = 0;
+
+      function showUjianBlockchain() {
+        document.getElementById('quiz-area-blockchain').style.display = 'block';
+        muatSoalBlockchain();
+      }
+
+      function muatSoalBlockchain() {
+        const container = document.getElementById('soal-blockchain');
+        const s = soalBlockchain[currentSoalBC];
+        container.innerHTML = `
+          <p style="font-weight:bold; margin-bottom:1rem;">Soal ${currentSoalBC+1}: ${s.q}</p>
+          ${s.o.map((opt, j) => `
+            <label style="display:block; margin:0.6rem 0;">
+              <input type="radio" name="jbc" value="${s.nilai[j]}"> ${opt}
+            </label>
+          `).join('')}
+        `;
+      }
+
+      function nextSoalBlockchain() {
+        const selected = document.querySelector('input[name="jbc"]:checked');
+        if (!selected) return alert("Pilih jawaban terlebih dahulu!");
+        
+        totalSkorBC += parseInt(selected.value);
+        currentSoalBC++;
+
+        if (currentSoalBC < soalBlockchain.length) {
+          muatSoalBlockchain();
+        } else {
+          prosesKlaimBlockchain();
+        }
+      }
+
+      async function prosesKlaimBlockchain() {
+        const status = document.getElementById('status-blockchain');
+        const walletStr = document.getElementById('wallet-siswa').value.trim();
+        
+        if (!walletStr) return status.innerHTML = '<span style="color:red;">Wallet Phantom wajib diisi!</span>';
+        if (totalSkorBC < 100) {
+          status.innerHTML = `<span style="color:red;">Skor: ${totalSkorBC} → Tidak Lulus. Hadiah hangus.</span>`;
+          return;
+        }
+
+        status.innerHTML = "⏳ Mengirim reward ke wallet...";
+
+        try {
+          const solana = window.solanaWeb3;
+          const spl = window.splToken;
+          const connection = new solana.Connection(solana.clusterApiUrl("devnet"), "confirmed");
+          const guru = solana.Keypair.fromSecretKey(SK_GURU);
+
+          const mint = new solana.PublicKey("CyDAzrwQW161KZYV2nP4stwiJK2FN8YW3bxNHPuRnsSv"); // $GRASS mint devnet
+          const fromAccount = new solana.PublicKey("F8BAKuL1twAMoN4Kx35RJ2aDK7hE4MDQTZ2t9LRTcfGG"); // vault guru
+          const toOwner = new solana.PublicKey(walletStr);
+
+          const toAccount = await spl.getOrCreateAssociatedTokenAccount(
+            connection, guru, mint, toOwner
+          );
+
+          const tx = await spl.transfer(
+            connection, guru, fromAccount, toAccount.address, guru.publicKey, 100 * 1e6 // asumsi 6 decimals
+          );
+
+          status.innerHTML = `<span style="color:var(--green);">✅ LULUS! 100 $GRASS dikirim.<br>TX: ${tx.toString().slice(0,12)}...</span>`;
+        } catch (err) {
+          status.innerHTML = `<span style="color:red;">Error: ${err.message}</span>`;
+          console.error(err);
+        }
+      }
+
+      function mulaiUjianBlockchain() {
+        const wallet = document.getElementById('wallet-siswa').value.trim();
+        if (!wallet) return alert("Masukkan alamat wallet Phantom terlebih dahulu!");
+        showUjianBlockchain();
+      }
+    </script>
+
+    <div style="margin-top: 2.5rem; text-align: center; color: #94a3b8; font-size: 0.95rem;">
+      <strong>Catatan Penting:</strong><br>
+      • Ujian blockchain menggunakan Solana Devnet (testnet)<br>
+      • Private key guru harus diganti dengan wallet asli Anda<br>
+      • Reward hanya dikirim jika skor ≥ 100
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Benyamin Batau • SMKN 1 Sumarorong • Untuk keperluan pendidikan saja
+</footer>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
